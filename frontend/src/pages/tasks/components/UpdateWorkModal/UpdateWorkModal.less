@@ -1,0 +1,828 @@
+@import '~themes/abstracts/default.less';
+
+.updateWork-modal {
+  :global {
+    .ant-modal-content {
+      width: 694px;
+    }
+
+    .ant-form-item {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .ant-time-picker-panel {
+      color: #3e0f3f;
+
+      &-input-invalid {
+        border: 2px solid rgba(245, 34, 45, 0.6) !important;
+      }
+    }
+
+    .ant-form-item-control {
+      text-align: left;
+    }
+
+    .ant-form-item-control.has-error {
+      .ant-form-item-children {
+        input#name {
+          background-color: #fbfbfb !important;
+        }
+      }
+
+      .ant-form-explain {
+        margin-top: 0 !important;
+        margin-bottom: -20px;
+      }
+    }
+
+    .ant-time-picker-icon, .ant-time-picker-clear {
+      display: none;
+    }
+  }
+
+  .modal-content {
+    @media (max-width: 767px) {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 72vh;
+      > div {
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .modal-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 23px;
+    padding-top: 7px;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+
+    .taskInp {
+      width: 321px;
+      height: 42px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+      letter-spacing: 0.02em;
+      color: #000;
+      padding: 7.5px 20px;
+      margin-right: 30px;
+      @media (max-width: 767px) {
+        width: 100%;
+        height: 60px;
+      }
+
+
+      &::placeholder {
+        color: #3F0F3F;
+      }
+
+      &:-ms-input-placeholder {
+        color: #3F0F3F;
+      }
+
+      &::-webkit-input-placeholder {
+        color: #3F0F3F;
+      }
+    }
+
+    .projectName {
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 26px;
+      letter-spacing: 0.05em;
+      color: #fff;
+      padding: 0 16px;
+      margin-right: 12px;
+      background: #EBB424;
+      border-radius: 5px;
+      border: none;
+      text-overflow: ellipsis;
+      width: 90px;
+      height: 26px;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden !important;
+      font-family: Red Hat Display, sans-serif;
+      font-style: normal;
+      @media (max-width: 767px) {
+        width: 100px;
+      }
+    }
+
+    .tagNames {
+      font-family: Red Hat Display, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 19px;
+      font-size: .875rem;
+      letter-spacing: 0.05em;
+      padding: 5px 10px;
+      text-overflow: ellipsis;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 80px;
+    }
+
+    .taskEdit {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    .positionRel {
+      position: relative;
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .editIcon {
+        position: absolute;
+        right: 20px;
+        top: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .rowBetween {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 767px) {
+      .hourSect {
+        margin: 16px 0;
+      }
+    }
+
+    > div {
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    :global {
+      .invalid-time-range {
+        .ant-time-picker-input {
+          border: 1px solid #f44336;
+        }
+      }
+    }
+  }
+
+  .dateSect {
+    width: 211px;
+    height: 42px;
+    border: none;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+    color: #D3D1D1;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    span {
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      color: #B3B3B3;
+    }
+  }
+
+  .hourSect {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .modalTimePicker1,
+    .modalTimePicker2 {
+      width: 50px;
+      @media (max-width: 767px) {
+        width: 35%;
+      }
+
+      :global {
+        .ant-time-picker-input, .ant-time-picker-input[disabled] {
+          border: none;
+          font-family: Red Hat Display, sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 14px;
+          line-height: 19px;
+          letter-spacing: 0.05em;
+          padding: 0;
+          color: #000;
+          text-align: center;
+          border-radius: 12px;
+          background-color: transparent;
+
+          &:hover {
+            border: none;
+          }
+        }
+      }
+    }
+
+    .hourSectLabelIcon {
+      color: #B3B3B3;
+      height: 16px;
+      padding-left: 20px;
+      padding-right: 10px;
+
+      :global {
+        .anticon svg {
+          transform: rotate(310deg);
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+
+  .dateAllHours {
+    width: 107px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(74, 84, 255, 0.15);
+    box-shadow: 4px 4px 10px rgba(255, 244, 244, 0.8);
+    border: none;
+    color: @button-color;
+  }
+
+  .textDescription {
+    height: 249px;
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    border: none;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    color: #000;
+    resize: none;
+    margin-bottom: 20px;
+    @media (max-width: 767px) {
+      max-height: 234px;
+    }
+  }
+
+  .editIconTextarea {
+    position: absolute;
+    right: 20px;
+    bottom: 70px;
+    cursor: pointer;
+  }
+
+  .positionRel {
+    position: relative;
+  }
+
+  .commentSect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    margin: 0 2px;
+
+    .avatar {
+      min-width: 30px;
+      height: 30px;
+      object-fit: cover;
+      border-radius: 50px;
+      margin-right: 12px;
+    }
+
+    .textComment {
+      box-sizing: border-box;
+      overflow-y: hidden;
+      min-height: 55px;
+      background: #fff;
+      border: 1px solid rgba(63, 15, 63, 0.18);
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.02em;
+      color: #000;
+      resize: none;
+      padding: 18px;
+      margin-bottom: 0;
+    }
+  }
+
+  .commentSectBtnWrapper {
+    display: flex;
+    justify-content: flex-end;
+
+    .commentSectBtn {
+      font-family: Red Hat Display, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: .875rem;
+      line-height: 1.875rem;
+      letter-spacing: 0.02em;
+      color: #B3B3B3;
+      padding: 0;
+      transition: .3s;
+
+      &:hover {
+        color: #4A54FF;
+      }
+
+      span {
+        margin-right: 0;
+      }
+    }
+
+    :first-child {
+      margin-right: 10px;
+    }
+  }
+
+  .commentSectWrapper {
+    overflow: scroll;
+    max-height: 200px;
+  }
+
+  .replyComment {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+
+    .avatar {
+      min-width: 30px;
+      height: 30px;
+      object-fit: cover;
+      border-radius: 50px;
+      margin-right: 15px;
+    }
+
+    .replySect {
+      width: 100%;
+      text-align: left;
+
+      .textReply {
+        background: #fff;
+        border: 1px solid rgba(63, 15, 63, 0.18);
+        box-sizing: border-box;
+        border-radius: 12px;
+        padding: 15px 31px 8px 20px;
+        margin-left: 42px;
+
+        p {
+          font-size: 14px;
+          line-height: 180%;
+          letter-spacing: 0.05em;
+          color: #000;
+
+          span {
+            font-weight: bold;
+            color: #3F0F3F;
+          }
+        }
+      }
+    }
+
+    .replyAvatarName {
+      display: flex;
+      align-items: center;
+      padding-bottom: 6px;
+
+      .replySectName {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.02em;
+        color: #000;
+        margin-bottom: 0;
+
+        span {
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.02em;
+          color: rgba(0, 0, 0, 0.5);
+          margin-left: 15px;
+        }
+      }
+    }
+  }
+
+  .popoverWrapper {
+    padding: 10px;
+
+    .popoverTxtWrapper {
+      max-width: 200px;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      .popoverBodyTxt {
+        font-family: Red Hat Display, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: .9rem;
+        line-height: 1;
+        text-align: center;
+        letter-spacing: 0.04em;
+        color: #3F0F3F;
+        word-break: break-word;
+      }
+
+    }
+
+    .popoverBtnsWrapper {
+      display: flex;
+      justify-content: flex-end;
+
+      .popoverConfirmBtn {
+        font-family: Red Hat Display, sans-serif;
+        font-style: normal;
+        font-size: 0.875rem;
+        line-height: 1.0875rem;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+        color: #FFFFFF;
+        margin-right: 10px;
+        border-radius: 15px;
+        border: 1px solid #3F0F3F;
+        padding: 5px 10px;
+        background-color: @primary-color;
+        cursor: pointer;
+        transition: .2s;
+
+        &:hover {
+          background-color: #712171;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .popoverCancelBtn {
+        cursor: pointer;
+        border: 1.5px solid #3F0F3F;
+        box-sizing: border-box;
+        border-radius: 15px;
+        font-weight: 600;
+        font-family: Red Hat Display, sans-serif;
+        font-style: normal;
+        font-size: .875rem;
+        line-height: 1.0875rem;
+        letter-spacing: 0.05em;
+        color: #3F0F3F;
+        transition: .2s;
+        background-color: #fff;
+
+        &:hover {
+          border-color: #712171;
+          color: #712171;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
+  .popoverTitleWrapper {
+    text-align: center;
+    padding: .5rem 0;
+
+    .popoverTitleTxt {
+      font-family: Red Hat Display, sans-serif;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 1rem;
+      line-height: 1.2;
+      letter-spacing: 0.04em;
+      color: #E51670;
+      margin-bottom: 0;
+    }
+  }
+
+
+  .editDeleteSect {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: -16px;
+
+    .commentSectLeftSideBtns {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        margin-left: 22px;
+        cursor: pointer;
+
+        svg {
+          width: 14px;
+          height: 14px;
+          color: #B3B3B3;
+        }
+      }
+    }
+
+  }
+
+  .validationMessage {
+    font-family: Red Hat Display, sans-serif;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    color: #ff0000;
+    margin-top: 5px;
+  }
+
+  .validationErrorBorder {
+    .project {
+      border: 1px solid #ff0000 !important;
+    }
+  }
+
+  .timeFieldWrapper {
+
+    outline: none;
+
+    .timeField {
+
+    }
+
+    .timeValidationError {
+      border-radius: 5px;
+      border: 1px solid #ff0000 !important;
+
+    }
+  }
+
+  .commentSectBtn {
+    font-family: Red Hat Display, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: .875rem;
+    line-height: 1.875rem;
+    letter-spacing: 0.02em;
+    color: #49C39E;
+    padding: 0;
+    transition: .3s;
+
+    &:hover {
+      color: #3b6c63;;
+    }
+  }
+
+  .loadMoreSection {
+    text-align: left;
+    margin-top: 12px;
+
+    .loadMoreCommentBtn {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 9px;
+      line-height: 12px;
+      letter-spacing: 0.05em;
+      color: rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+    }
+  }
+
+  .childComment {
+    margin-left: 50px;
+    margin-top: 15px;
+  }
+
+  .editTime {
+    background: #FFFFFF;
+    width: 204px;
+    border-radius: 12px;
+    top: 17em !important;
+    @media (max-width: 767px) {
+      top: 23em !important;
+    }
+
+    :global {
+      .ant-time-picker-panel-inner {
+        left: 0;
+      }
+
+      .ant-time-picker-panel-input {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.04em;
+        color: #000;
+
+        &::selection {
+          background: transparent;
+          color: #000;
+        }
+      }
+
+      .ant-time-picker-panel-input-wrap {
+        max-width: unset;
+        padding: 7px 2px 7px 7px;
+        border-bottom: 1px solid #EFF0F1;
+      }
+
+      .ant-time-picker-panel-combobox {
+        padding-left: 5px;
+      }
+
+      .ant-time-picker-panel-select {
+        overflow-y: auto;
+        width: 50%;
+        max-height: 200px;
+        border-left: 0;
+
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #EFF0F1;
+          border-radius: 100px;
+        }
+
+        ul {
+          width: 94px;
+          padding: 0;
+
+          li {
+            padding-left: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+          }
+
+          li:hover,
+          li:focus {
+            background: #EFF0F1;
+          }
+
+          .ant-time-picker-panel-select-option-selected {
+            background: #EFF0F1;
+            color: #3F0F3F;
+          }
+        }
+      }
+    }
+  }
+
+  .taskSearch {
+    align-items: center;
+    display: flex;
+    margin-right: 40px;
+    @media only screen and (max-width: 1201px) {
+      margin-right: 20px;
+    }
+
+    :global {
+      .ant-input-affix-wrapper.ant-input-affix-wrapper-input-with-clear-btn .ant-input:not(:last-child) {
+        padding-right: 65px;
+      }
+    }
+
+    .searchSect {
+      .searchContainer {
+        &:hover {
+          input {
+            border-color: #4d1f4b !important;
+          }
+        }
+
+        input {
+          position: relative;
+          border: 1px solid #d3d1d1;
+          border-radius: 5px;
+          padding: 0 35px 0 20px;
+          width: 360px;
+          height: 42px;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 19px;
+          letter-spacing: 0.05em;
+          color: #b3b3b3;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex: 1;
+          @media only screen and (min-width: 1201px) and (max-width: 1264px) {
+            width: 300px;
+          }
+
+          &:focus {
+            box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.9);
+          }
+        }
+
+        span {
+          i {
+            font-size: 20px;
+            color: #C8BFCC;
+          }
+        }
+      }
+    }
+  }
+
+  .itemSection {
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  .modalProjectTagsWrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    @media (max-width: 767px) {
+      justify-content: flex-start;
+    }
+
+    .modalProjectWrapper {
+      display: flex;
+      align-items: center;
+      outline: none;
+    }
+  }
+
+  .projectDefaultIndicator {
+    border: .5px solid #F8F8FB !important;
+    background-color: #F8F8FB !important;
+    color: #000 !important;
+  }
+
+  .blackText {
+    color: #000 !important;
+  }
+
+  .form-action {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 30px;
+    @media (max-width: 425px) {
+      justify-content: space-between;
+      padding-top: 0;
+    }
+
+    button {
+      margin-left: 20px;
+      border: 2px solid @button-color;
+      @media (max-width: 425px) {
+        margin-left: 0;
+        min-width: 130px;
+      }
+
+      &:hover {
+        border: 2px solid #7C83FF;
+      }
+    }
+  }
+
+  .reset-Icon {
+    cursor: pointer;
+  }
+
+}

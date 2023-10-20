@@ -1,0 +1,74 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.demo-form {
+  padding: 110px 100px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.08);
+  border-radius: 50px;
+  @media (max-width: @screen-max-lg) {
+    padding: 40px;
+  }
+
+  .demo-form-input {
+    background: #FFFFFF;
+    border: 1px solid #D3D1D1;
+    box-sizing: border-box;
+    border-radius: 6px;
+    padding: 13px;
+    height: 46px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000000;
+    &:focus {
+      border: 1px solid @purple-color;
+    }
+  }
+  .action-block {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    button {
+      height: 48px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  :global {
+    .ant-legacy-form-item {
+      margin-bottom: 20px;
+    }
+    .ant-legacy-form-item-label > label {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.03em;
+      color: #B3B3B3;
+    }
+    .ant-legacy-form-item-required::before {
+      display: none;
+    }
+    .ant-legacy-form-item-label > label::after {
+      display: none;
+    }
+    .ant-checkbox-wrapper {
+      span:last-child {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.03em;
+        color: #B3B3B3;
+      }
+      .ant-checkbox-checked {
+        .ant-checkbox-inner {
+          background-color: @purple-color;
+          border: 1px solid @purple-color;
+        }
+      }
+    }
+  }
+}
+
+

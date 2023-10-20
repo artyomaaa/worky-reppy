@@ -1,0 +1,24 @@
+@import '~themes/abstracts/default.less';
+
+.parent-wrap {
+  padding: 20px 0 0;
+  @media (max-width: 767px) {
+    &:first-child {
+      padding: 0;
+    }
+  }
+  :global {
+    /*Should override our custom styles*/
+
+    .ant-row-flex {
+      padding: 0 40px;
+      margin: 0;
+      @media(max-width: 792px) {
+        padding: 0 10px;
+      }
+    }
+  }
+  @media (max-width: 425px) {
+    padding: 0;
+  }
+}

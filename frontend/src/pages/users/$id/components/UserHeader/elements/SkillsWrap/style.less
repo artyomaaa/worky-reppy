@@ -1,0 +1,93 @@
+@import '~themes/abstracts/default.less';
+
+@defaultSkill: #F7F7F7;
+.textStyle {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+.skills-wrapper {
+  width: 100%;
+  padding: 0 3.5vw;
+  transition: .4s;
+  @media (max-width: 1265px) {
+    padding: 0 20px;
+  }
+  @media (max-width: 767px) {
+    margin-top: 6px;
+  }
+
+  .skills-badges-block {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    @media (max-width: 1265px) {
+      flex-direction: column;
+    }
+
+    .skills-badges {
+      margin-bottom: 30px;
+
+      > .skills-badge:extend(.textStyle) {
+        background: @defaultSkill;
+        border-radius: 5px;
+        display: inline-block;
+        margin: 3px 10px 10px 0;
+        padding: 3px 8px;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: @primary-color;
+      }
+
+      .no-skill:extend(.textStyle) {
+        color: #000;
+        font-weight: 500;
+      }
+    }
+
+    .skills-badges-more {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-decoration-line: underline;
+      color: #000000;
+      cursor: pointer;
+      min-width: 62px;
+      @media (max-width: 1265px) {
+        align-self: flex-end;
+      }
+      @media (max-width: 767px) {
+        margin-top: auto;
+      }
+    }
+
+    .skills-badges-less {
+      display: flex;
+      align-self: flex-end;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-decoration-line: underline;
+      color: #000000;
+      cursor: pointer;
+      margin-top: auto;
+    }
+  }
+
+  > h3:extend(.textStyle) {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #000;
+  }
+
+  > p:extend(.textStyle) {
+    color: #000;
+    font-weight: 500;
+  }
+}

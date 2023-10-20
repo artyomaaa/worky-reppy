@@ -1,0 +1,121 @@
+@import '~themes/abstracts/default.less';
+
+.contact-modal {
+  width: 80% !important;
+  padding: 26px;
+  background: #FFFFFF;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  @media (min-width: @screen-max-lg) {
+    width: 1000px !important;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 66px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #A9AAAB;
+    margin-bottom: 40px;
+  }
+  :global {
+    .ant-modal-close-x {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .contact-form-input {
+    background: #F4F8FB;
+    border-radius: 6px;
+    padding: 13px 40px;
+    height: 56px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000000;
+    border: 1px solid transparent;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+      color: #A9AAAB;
+    }
+
+    &:focus {
+      border: 1px solid @purple-color;
+    }
+  }
+
+  .contact-form-textarea {
+    padding: 13px 40px;
+    background: #F4F8FB;
+    border-radius: 6px;
+    resize: none;
+    border: 1px solid transparent;
+
+    &::placeholder {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+      color: #A9AAAB;
+    }
+  }
+
+  .send-btn {
+    width: 100%;
+    background-color: @purple-color;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    height: 50px;
+    padding: 13px 15px;
+  }
+
+  .contact-footer {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 66px;
+    }
+
+    .social_icons {
+      margin-left: 60px;
+      display: flex;
+      align-items: center;
+
+      li {
+        margin-right: 20px;
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,48 @@
+.action-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:first-child {
+    svg {
+      path {
+        fill: #B6B6B6;
+      }
+    }
+  }
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 10px;
+      &:hover {
+        background-color: #F8F8FB;
+        &:first-child {
+          svg {
+            path {
+              fill: #4A54FF;
+            }
+          }
+        }
+        svg {
+          g {
+            path {
+              fill: @inactive;
+            }
+          }
+        }
+      }
+    }
+
+  svg {
+    g {
+      path {
+        fill: #B6B6B6;
+      }
+    }
+  }
+}

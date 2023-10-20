@@ -1,0 +1,310 @@
+@import '~themes/abstracts/default.less';
+
+.add-edit-task {
+  :global {
+    .app-time-picker .ant-time-picker {
+      @media (max-width: 422px) {
+        max-width: 85px;
+      }
+    }
+
+    .ant-row-flex-middle {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .col-animate {
+      transition: .5s;
+    }
+  }
+
+  .icon-wrapper {
+    display: inline-flex;
+    margin-right: 18.5px;
+  }
+
+  .task-bar-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    padding-right: 0;
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+
+    .task-bar-text {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+      color: rgba(0, 0, 0, 0.7);
+      text-transform: uppercase;
+      transition: color .3s linear;
+      cursor: pointer;
+
+      .icon-wrapper {
+        svg {
+          path {
+            transition: all .3s linear;
+          }
+        }
+      }
+
+      &.task-timer {
+        min-width: 80px;
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+
+    &:hover:not(.task-bar-item:disabled) {
+      .task-bar-text {
+        color: rgb(0, 0, 0);
+      }
+    }
+
+    &:disabled {
+      .task-bar-text {
+        opacity: 0.3;
+      }
+
+      .icon-wrapper {
+        svg {
+          path {
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+  }
+
+  .manual-mode-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    div {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+    .manual-mode-actions-text {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+      color: @defaultColor;
+      @media (max-width: 422px) {
+        padding: 0 6px;
+      }
+
+      &:first-child {
+        color: @button-color;
+      }
+
+      &:hover {
+        color: @purple-color;
+      }
+    }
+  }
+
+  /*Project section*/
+
+  .activeProjectWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .tagsProjectsWrapper {
+      display: flex;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+
+    .projectsSection {
+      margin-right: 15px;
+      display: inline-block;
+      width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
+      vertical-align: middle;
+      @media (max-width: 767px) {
+        width: 100px;
+      }
+
+      .colorIndicator {
+        background: transparent;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        margin-right: 9px;
+        display: inline-block;
+      }
+
+      .activeProjectName {
+        font-weight: bold;
+        font-size: .875rem;
+        line-height: 1.875rem;
+        letter-spacing: 0.05em;
+        color: #000000;
+        outline: none;
+      }
+
+      .project-name {
+        margin-left: 10px;
+        font-size: .875rem;
+        line-height: 1.875rem;
+        letter-spacing: 0.05em;
+        color: #000000;
+      }
+    }
+  }
+}
+
+
+.sectionWrapper {
+
+  .colorIndicatorSearch {
+    background: transparent;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-left: 9px;
+    display: inline-block;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.9);
+  }
+
+  .project-name {
+    margin-left: 10px;
+    font-size: .875rem;
+    line-height: 1.875rem;
+    letter-spacing: 0.05em;
+    color: #000000;
+  }
+}
+
+:global {
+  .ant-time-picker-panel-inner {
+    left: 0px;
+    top: 2px;
+    .app-time-picker-dropdown .ant-time-picker-panel-input-wrap {
+      padding: 3px;
+      input {
+        width: 78px;
+        height: 38px;
+      }
+    }
+    .ant-time-picker-panel-input {
+      border-radius: 9px;
+    }
+    .app-time-picker-dropdown .ant-time-picker-panel-combobox {
+      .ant-time-picker-panel-select {
+        overflow-y: auto;
+      }
+    }
+  }
+
+  .app-search-input {
+    .ant-input {
+      color: #000000;
+      font-weight: bold;
+      &::placeholder {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .searchField {
+    @media (max-width: 767px) {
+      width: 100%
+    }
+  }
+
+  .tasksModeSection {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .ant-btn {
+      height: unset;
+    }
+    :global {
+      .invalid-time-range {
+        .ant-time-picker-input {
+          border: 1px solid #f44336;
+        }
+      }
+    }
+  }
+
+  .add-project-button {
+    @media only screen and (max-width: 1129px) {
+      padding: 16px 5px !important;
+    }
+
+    @media only screen and (max-width: 767px) {
+      padding: 16px 12px !important;
+    }
+  }
+
+  .middleButton {
+    padding-right: 9px
+  }
+
+  .timerAnim-enter {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+
+  .timerAnim-exit {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .timerAnim-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .timerAnim-exit-active {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+
+  .timerAnim-enter-active,
+  .timerAnim-exit-active {
+    transition: all 300ms;
+  }
+}
+
+.timer-mode-hide {
+  @media only screen and (max-width: 1540px) {
+    display: none !important;
+  }
+
+  @media only screen and (max-width: 1199px) {
+    display: flex !important;
+  }
+}
+
+.manual-mode-active {
+  @media only screen and (max-width: 1540px) {
+    width: 40% !important;
+  }
+  @media only screen and (max-width: 1199px) {
+    width: 100% !important;
+  }
+}
+
+.projectBlackIndicator {
+  color: #000 !important;
+  border: .5px solid #000;
+  background-color: #fff;
+}

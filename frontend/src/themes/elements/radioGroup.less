@@ -1,0 +1,31 @@
+@import '~themes/abstracts/default.less';
+
+:global {
+  .custom-radio-group {
+    margin-bottom: 30px;
+    .ant-radio-button-wrapper {
+      color: @defaultColor;
+      font-weight: bold;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      background-color: @gray-lighter;
+      &.ant-radio-button-wrapper-checked {
+        color: @primary-color;
+        background-color: #FFFFFF;
+      }
+      &:hover {
+        background-color: #FFFFFF;
+        color: @primary-color;
+      }
+      &:first-child {
+        border-radius: 5px 0 0 5px;
+      }
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+      &:focus-within {
+        outline: none;
+      }
+    }
+  }
+}

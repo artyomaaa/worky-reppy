@@ -1,0 +1,722 @@
+.report-modal {
+  width: initial !important;
+
+  :global {
+    .ant-modal-content {
+      width: 741px;
+    }
+  }
+
+  .modal-content {
+    @media (max-width: 767px) {
+      overflow-x: hidden;
+      overflow-y: auto;
+      max-height: 68vh;
+      > div {
+        width: 96%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .reportHours {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .reportHoursItem {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+
+      div {
+        display: flex;
+        flex: 1;
+        @media (max-width: 767px) {
+          flex: unset;
+        }
+      }
+
+      .reportHourTitle {
+        text-align: left;
+      }
+
+      .reportHoursInput {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+        justify-content: space-between;
+        @media (max-width: 767px) {
+          margin-bottom: 0;
+        }
+
+        .reportWorkHours {
+          background: #fff;
+          box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+          border-radius: 12px;
+          height: 42px;
+          display: flex;
+          align-items: center;
+          @media (max-width: 767px) {
+            width: 35%;
+            margin: 0 15px;
+          }
+          @media (max-width: 578px) {
+            width: 47%;
+            margin: 0 0 0 10px;
+          }
+        }
+      }
+
+      :global {
+        .ant-dropdown-trigger {
+          display: flex;
+          justify-content: space-between;
+          background: #FFFFFF;
+          box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+          border-radius: 12px;
+          border: none;
+          color: #808080;
+          margin: 0 0 0 40px;
+          width: 137px;
+          @media (max-width: 767px) {
+            margin: 0;
+          }
+          @media (max-width: 578px) {
+            width: 100%;
+            margin: 16px 0 6px 0;
+          }
+        }
+
+        .app-btn svg {
+          margin: 0 0 0 20px;
+
+          path {
+            fill: #808080;
+          }
+        }
+
+        .ant-dropdown-menu {
+          padding: 0;
+
+          .ant-dropdown-menu-item {
+            padding: 8px 12px;
+          }
+        }
+
+        .ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover {
+          background-color: #f5f5f5;
+        }
+      }
+
+      .reportHoursTitle {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.1em;
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      input {
+        width: 95px;
+        background: transparent;
+        border: none;
+        box-sizing: border-box;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.05em;
+        color: #000;
+        padding: 0;
+        border-right: 1px solid rgba(222, 222, 222, 0.57);
+        height: 20px;
+        @media (max-width: 767px) {
+          width: 40%;
+        }
+
+        &:last-child {
+          border-right: none;
+        }
+
+        &::placeholder {
+          font-weight: bold;
+          font-size: 10px;
+          line-height: 13px;
+          color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+
+  .reportProjectHours {
+    padding: 50px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 767px) {
+      padding: 30px 0 0 0;
+    }
+
+    .reportHoursInput {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0 0 15px;
+      @media (max-width: 767px) {
+        margin: 0;
+      }
+    }
+
+    .reportHoursTitle {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: 0.1em;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .scrollableSect {
+      max-height: 305px;
+      @media (max-width: 767px) {
+        max-height: none;
+      }
+
+      .projectReportHours:last-child {
+        margin-bottom: 5px;
+        @media (max-width: 767px) {
+          margin-right: 0;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+
+  .projectReportHours {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      > div {
+        margin-bottom: 18px;
+      }
+    }
+    @media (max-width: 471px) {
+      justify-content: flex-start;
+      > div {
+        width: 100%;
+      }
+    }
+
+    :global {
+      .ant-select-selection {
+        border: none;
+        border-radius: 6px;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .ant-select-selection-selected-value {
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        width: 135px;
+        line-height: 26px;
+        @media (max-width: 471px) {
+          width: 100%;
+        }
+      }
+
+      .ant-select-selection__placeholder {
+        min-width: 155px;
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 14px;
+        letter-spacing: 0.05em;
+      }
+
+      .ant-select-selection__rendered {
+        min-width: 105px;
+        @media (max-width: 767px) {
+          min-width: 130px;
+          margin-right: 0;
+        }
+        @media (max-width: 471px) {
+          min-width: fit-content;
+        }
+      }
+
+      .ant-select-arrow {
+        right: 24px;
+        margin-top: -8px;
+
+        svg {
+          width: 8px;
+          height: 5px;
+        }
+      }
+
+      .dot {
+        display: inline-block;
+        margin-right: 10px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+
+      .ant-select-dropdown {
+        ul {
+          padding: 0;
+
+          li {
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+            background: transparent;
+            color: #0009;
+
+            &:hover,
+            &:focus {
+              background: #f5f5f5;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 675px) {
+      .hour, .minute {
+        width: 100% !important;
+      }
+    }
+
+    .project, .hour, .minute {
+      width: 180px;
+      height: 46px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      background: #FFFFFF;
+      border: 1px solid #D3D1D1;
+      box-sizing: border-box;
+      border-radius: 12px;
+      margin-right: 16px;
+      font-weight: 500;
+      @media (max-width: 471px) {
+        width: 100%;
+      }
+
+      &:focus {
+        background: #FFFFFF;
+        border: 1px solid #4A54FF;
+        box-sizing: border-box;
+        border-radius: 12px;
+      }
+
+      :global {
+        .ant-select-selection {
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          margin: auto;
+          outline: none;
+          box-shadow: none;
+
+          .ant-select-selection__rendered {
+            height: 100%;
+
+            .ant-select-selection__placeholder {
+              padding-left: 19px;
+              margin-top: -10px;
+              @media (max-width: 471px) {
+                padding-left: 3px;
+                text-align: center;
+              }
+            }
+
+            .ant-select-selection-selected-value {
+              padding: 8px;
+            }
+          }
+
+          &:focus {
+            background: #FFFFFF;
+            border: 1px solid #4A54FF;
+            box-sizing: border-box;
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+
+    .projectFieldWrapper {
+      position: relative;
+    }
+
+    .validationMessage {
+      position: absolute;
+      font-family: Red Hat Display, sans-serif;
+      letter-spacing: 0.02em;
+      font-weight: 500;
+      color: #ff0000;
+      font-size: 12px;
+    }
+
+    .validationErrorBorder {
+      .project {
+        border: 1px solid #ff0000 !important;
+      }
+    }
+
+    .timeFieldWrapper {
+      position: relative;
+      width: 182px;
+      outline: none;
+      margin-right: 16px;
+      @media (max-width: 675px) {
+        width: 140px;
+      }
+      @media (max-width: 637px) {
+        width: 177px;
+      }
+      @media (max-width: 471px) {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      .timeValidationError {
+        border-radius: 12px;
+      }
+    }
+
+    .closeOutlinedIcon {
+      outline: none;
+      transition: 1s;
+      @media (max-width: 695px) {
+        margin-top: 10px;
+        margin-left: auto;
+        margin-right: 25px;
+      }
+
+      svg {
+        &:hover {
+          g {
+            path {
+              transition: .3s;
+              fill: #FA3B4B;
+            }
+          }
+        }
+      }
+    }
+
+    input {
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+      color: #000;
+    }
+  }
+
+  .hour::-webkit-outer-spin-button,
+  .minutes::-webkit-outer-spin-button,
+  .hour::-webkit-inner-spin-button,
+  .minute::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .hour[type="number"],
+  .minute[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .hour::placeholder,
+  .minute::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+
+  .hour:-ms-input-placeholder,
+  .minute:-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .hour::-ms-input-placeholder,
+  .minute::-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .modalTitle {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #3F0F3F;
+    margin-bottom: 0;
+    padding-bottom: 40px;
+  }
+
+  .scrollableSect {
+    max-height: 265px;
+    overflow: auto;
+    padding-bottom: 13px;
+    @media (max-width: 767px) {
+      width: 100% !important;
+      padding: 20px 0 0 0;
+      overflow-y: hidden;
+      overflow-x: auto;
+      max-height: none;
+    }
+  }
+
+  .dFlexCenter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @media (max-width: 660px) {
+      width: 100%;
+    }
+
+    > div {
+      width: 100%;
+      @media (max-width: 660px) {
+        width: fit-content;
+      }
+      @media (max-width: 767px) {
+        margin-left: 2px;
+        margin-right: 4px;
+      }
+    }
+  }
+
+  .plusIcon {
+    svg {
+      path {
+        stroke: #4A54FF !important;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .todayTasks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #FFFFFF;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 100%;
+    margin: 10px 10px 0;
+    padding: 18px 0;
+    outline: none;
+    @media (max-width: 767px) {
+      padding: 10px 0;
+      margin: 0 0 10px 0;
+    }
+
+    select {
+      width: 134px;
+      min-width: 134px;
+      height: 36px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.07);
+      box-sizing: border-box;
+      box-shadow: 4px 4px 8px rgba(192, 179, 179, 0.25);
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+      color: #000;
+      margin-right: 10px;
+    }
+
+    .taskTitle {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+      color: #000;
+      flex: 0 0 100px;
+      margin-left: 20px;
+      min-width: 120px;
+
+      span {
+        text-align: left;
+        display: inline-block;
+        max-width: 110px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        :global {
+          .anticon-ellipsis {
+            color: #000;
+            font-size: 1.5rem;
+            margin-bottom: -5px;
+          }
+        }
+      }
+    }
+
+    .taskProject {
+      display: flex;
+      min-width: 260px;
+      @media (max-width: 767px) {
+        min-width: 300px;
+      }
+    }
+
+    .alignCenter {
+      display: flex;
+      align-items: center;
+    }
+
+    .reppyBtn {
+      min-width: 80px;
+      height: 26px;
+      font-weight: 900;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+      color: #fff;
+      background: #ccc;
+      border-radius: 5px;
+      border: none;
+      max-width: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .workHours {
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      width: 187px;
+
+      span {
+        display: block;
+        float: left;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 1.2;
+        letter-spacing: 0.05em;
+        color: #000;
+
+        &:last-of-type {
+          float: right;
+        }
+      }
+
+      .greyHour {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  :global {
+    .modal-footer-actions {
+      margin-top: 0;
+      @media (max-width: 682px) {
+        margin-top: 30px;
+      }
+      @media (max-width: 425px) {
+        justify-content: space-between;
+        padding-top: 0;
+      }
+    }
+
+    .primary-btn, .primary-btn-outline {
+      margin-right: 16px;
+      border: 2px solid @button-color;
+      @media (max-width: 425px) {
+        margin-left: 0;
+        min-width: 130px;
+      }
+
+      &:hover {
+        border: 2px solid #7C83FF;
+      }
+    }
+  }
+}
+
+.exportDropdown {
+  :global {
+    .ant-dropdown-menu-item > a, .ant-dropdown-menu-submenu-title > a {
+      font-weight: bold;
+      font-size: 14.5px;
+      color: rgb(0, 0, 0) !important;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+
+    .ant-select-dropdown, .ant-dropdown {
+      box-shadow: none;
+      border-radius: 10px;
+    }
+
+    .ant-dropdown-menu {
+      padding: 0;
+      margin-top: 16px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+
+      .ant-dropdown-menu-item {
+        padding: 6px 20px;
+        font-weight: bold;
+        font-size: 14.5px;
+      }
+
+      :first-child {
+        padding-top: 12px;
+        border-radius: 12px;
+      }
+
+      :last-child {
+        padding-bottom: 12px;
+        border-radius: 12px;
+      }
+    }
+  }
+}

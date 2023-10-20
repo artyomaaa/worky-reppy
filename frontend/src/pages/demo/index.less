@@ -1,0 +1,36 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.demo-main-section {
+  padding-top: 200px;
+  padding-bottom: 65px;
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("img/landing/demo.png");
+  @media (max-width: @screen-max-md) {
+    background-position: right;
+  }
+  @media (min-width: @screen-max-xl) {
+    height: 1253px;
+  }
+  h1 {
+    .text-style(48px, bold, 54px, @dark-text-color, left);
+    letter-spacing: 1px;
+    margin-bottom: 210px;
+    max-width: 320px;
+    @media (max-width: @screen-max-md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  p {
+    .text-style(16px, 400, 34px, #fff, left);
+    letter-spacing: 1.5px;
+    max-width: 488px;
+  }
+  .demo-main-content {
+    padding: 0 30px;
+  }
+}

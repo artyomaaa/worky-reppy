@@ -1,0 +1,71 @@
+:global {
+  .add-task-form {
+    margin-bottom: 20px;
+
+    :global {
+      .ant-row-flex {
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        > .ant-col {
+          &:first-child {
+            margin-right: 16px;
+            width: 79%;
+            @media (max-width: 767px) {
+              width: 90%;
+            }
+          }
+        }
+      }
+
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+
+      .ant-input {
+        height: 42px;
+        border: 1px solid #D3D1D1;
+        box-sizing: border-box;
+        border-radius: 12px;
+        padding: 4px 20px;
+      }
+
+      .app-btn {
+        min-width: 90px !important;
+        border: none;
+        @media (max-width: 767px) {
+          padding: 0;
+          min-width: auto !important;
+          width: 44px;
+          height: 42px;
+        }
+
+        > span {
+          @media (max-width: 767px) {
+            display: none;
+          }
+        }
+
+        > svg {
+          display: none;
+          margin: 0;
+          width: 10px;
+          height: 10px;
+          @media (max-width: 767px) {
+            display: block;
+          }
+        }
+
+        &:hover {
+          background-color: rgba(74, 84, 255, 0.7) !important;
+        }
+
+        &:focus {
+          background-color: @button-color;
+          border-color: @button-color;
+        }
+      }
+    }
+  }
+}

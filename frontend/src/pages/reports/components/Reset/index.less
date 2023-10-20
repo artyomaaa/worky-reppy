@@ -1,0 +1,35 @@
+.reset {
+  display: flex;
+  align-items: center;
+  align-self: center !important;
+  margin: 8px !important;
+
+  &-without-margin {
+    margin: 0 !important;
+  }
+
+  &-horizontal-margin {
+    margin: 0 8px !important;
+  }
+
+  :global {
+    .ant-btn {
+      background: #FFFFFF;
+      border: 1px solid @primary-color;
+      box-sizing: border-box;
+      color: @primary-color;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      width: 86px;
+      height: 30px;
+
+      &:hover {
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0 3px #353FDF;
+      }
+    }
+  }
+}

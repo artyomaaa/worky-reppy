@@ -1,0 +1,48 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  &.login {
+    .logo {
+      img {
+        @media (max-width: @screen-max-xs-s) {
+          width: 39px !important;
+          height: 39px !important;
+        }
+      }
+    }
+  }
+
+  .logo {
+    img {
+      @media (max-width: @screen-max-xs-s) {
+        width: 22px !important;
+        height: 22px !important;
+      }
+    }
+  }
+
+  > div:last-child {
+    @media (max-width: @screen-max-xs-s) {
+      font-size: 12px !important;
+    }
+  }
+
+  :global {
+    .text {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 26px;
+      margin-left: 27px;
+      color: #ffffff;
+
+      &.dark {
+        color: #352F53;
+      }
+    }
+  }
+}

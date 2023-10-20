@@ -1,0 +1,12 @@
+{
+  "name": "Worky-Reppy",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A front-end solution for Worky-Reppy",
+  "icons": [{
+      "src": "favicon/favicon.svg",
+      "sizes": "any"
+    }
+  ]
+}

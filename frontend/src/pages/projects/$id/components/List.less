@@ -1,0 +1,121 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.projects-participants__list {
+  margin-top: 30px;
+  thead {
+    text-transform: uppercase;
+  }
+  tr {
+    td {
+      padding: 11px 10px 11px 20px;
+      border:0;
+      @media (max-width: 425px) {
+        padding: 27px 0 27px 6px;
+        width: 15%;
+      }
+    }
+
+    th {
+      font-family: 'Red Hat Display';
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 16px;
+      background-color: #25274F !important;
+      color: #ffffff;
+      padding: 11px 10px 11px 20px;
+      @media (max-width: 425px) {
+        padding: 11px 0 11px 16px;
+      }
+    }
+  }
+  .participant__working-hours {
+    color: red;
+  }
+  .projects-participants__name {
+    :global{
+      a {
+        font-weight: 500;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color:black
+      }
+    }
+    .ellipsis(290px);
+    @media (max-width: 767px) {
+      .ellipsis(130px);
+    }
+  }
+  :global {
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color:black
+    }
+    .ant-pagination {
+      li {
+        font-family: @font-family-primary;
+        width: 36px;
+        height: 36px;
+
+        a {
+          justify-content: center;
+          line-height: 35px;
+        }
+      }
+    }
+
+    .ant-pagination-disabled a {
+      color: #B3B3B3;
+      background: transparent;
+      border: none;
+    }
+
+    .ant-pagination-item-link {
+      color: #000000;
+      background: transparent;
+      border: none;
+    }
+
+    .ant-pagination-item-active {
+      background: #4A54FF !important;
+      a {
+        color: #FFFFFF !important;
+      }
+    }
+
+    .ant-pagination-item {
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+    }
+
+    .ant-pagination-item a {
+      font-weight: bold;
+      font-size: 13.5px;
+      letter-spacing: 0.05em;
+      color: #000000;
+    }
+  }
+}
+.projects-participants-pagination {
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  padding: 22px 0;
+}
+
+:global {
+  .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+  .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+  .ant-table-thead > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td,
+  .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+    background: #FFFFFF;
+  }
+  .ant-table-tbody > tr:hover {
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  }
+}

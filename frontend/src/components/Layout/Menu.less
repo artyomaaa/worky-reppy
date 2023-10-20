@@ -1,0 +1,29 @@
+.menu {
+  background: transparent !important;
+  :global {
+    .ant-menu-submenu.ant-menu-submenu-active{
+      color: #7C83FF;
+      .ant-menu-submenu-title {
+        path {
+          fill: #B3B3B3;
+        }
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+    .ant-menu-submenu.ant-menu-submenu-selected{
+      .ant-menu-submenu-title {
+        path {
+          fill: #7C83FF;
+        }
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+    .ant-menu-submenu > .ant-menu {
+      background: transparent !important;
+    }
+  }
+}

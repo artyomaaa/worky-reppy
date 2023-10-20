@@ -1,0 +1,264 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+@titleMarginBottom: 30px;
+
+.textStyle {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+hr {
+  margin-bottom: 30px;
+  background-color: #e8e8e875;
+  height: 1px;
+  width: 100%;
+  border: none;
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  h3 {
+    margin-bottom: 0;
+    margin-left: 22px;
+    font-weight: bold;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+    color: #000000;
+  }
+}
+
+.social {
+  background: #FFFFFF;
+  border: 1px solid #D3D1D1;
+  box-sizing: border-box;
+  border-radius: 12px;
+  height: 46px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px 15px 40px;
+  transition: all ease 0.3s;
+  width: 100%;
+  position: relative;
+  margin-bottom: 30px;
+
+  > a {
+    width: 100%;
+  }
+
+  .social-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .social-name {
+      right: unset;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.03em;
+      color: #000000;
+      margin-bottom: 0;
+      margin-left: 15px;
+      .ellipsis(calc(100% - 18px));
+    }
+
+    svg {
+      position: absolute;
+      left: -20px;
+      width: 18px;
+    }
+  }
+
+  span {
+    position: absolute;
+    right: 15px;
+
+    > svg {
+      cursor: pointer;
+
+      path {
+        transition: all ease .3s;
+      }
+
+      &:hover {
+        path {
+          fill: @inactive;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 2px 5px 8px 0 rgb(211 209 209);
+  }
+}
+
+.add-section {
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.save-cancel-content {
+  @media (max-width: 1555px) {
+    flex: 0 0 100%;
+    margin-bottom: 30px;
+  }
+}
+
+.icon-content {
+  @media (max-width: 1555px) {
+    width: 100px;
+  }
+}
+
+.name-content {
+  @media (max-width: 1201px) {
+    flex: 0 0 50%;
+  }
+  @media (max-width: 1120px) {
+    flex: 0 0 100%;
+  }
+}
+
+.url-content {
+  @media (max-width: 1201px) {
+    flex: 0 0 100%;
+  }
+}
+
+.col-max-width {
+  @media (max-width: 1120px) {
+    width: 100%;
+  }
+}
+
+.social-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  @media (max-width: 1555px) {
+    justify-content: flex-end;
+  }
+
+  :global {
+    .ant-btn {
+      padding: 0;
+    }
+  }
+
+  .social-actions-text {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    border: none;
+    box-shadow: none;
+    color: @defaultColor;
+    @media (max-width: 1630px) {
+      padding: 0 6px;
+    }
+
+    &:first-child {
+      color: @button-color;
+    }
+
+    &:hover {
+      color: @purple-color;
+    }
+  }
+}
+
+.form-actions {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 30px 41px 30px 41px;
+  @media (max-width: 1465px) {
+    margin: 30px 20px 20px 41px;
+  }
+}
+
+.content-title:extend(.textStyle) {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: @titleMarginBottom;
+}
+
+.line-wraps-elements {
+  max-width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+
+  .website-item {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .website-title {
+      width: 40%;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.03em;
+      color: #000;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .website-link {
+      width: 60%;
+      position: relative;
+      padding: 0 30px 0 20px;
+      display: flex;
+      align-items: center;
+
+      a {
+        display: inline-block;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.03em;
+        color: #000;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        transition: all ease .3s;
+
+        &:hover {
+          color: @primary-color
+        }
+      }
+
+      span {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 2px;
+
+        svg {
+          path {
+            transition: all ease .3s;
+          }
+
+          &:hover {
+            path {
+              fill: @inactive;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

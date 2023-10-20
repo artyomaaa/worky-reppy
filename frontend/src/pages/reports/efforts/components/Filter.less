@@ -1,0 +1,175 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.filter-row {
+  &:first-child {
+    border-bottom: none;
+  }
+  align-items: center !important;
+}
+
+.search-bar {
+  padding: 8px;
+  width: 100%;
+}
+
+.first-row {
+  @media only screen and (max-width: 1273px) {
+    padding-bottom: 0 !important;
+  }
+}
+.efforts-head-col {
+  width: 400px;
+
+  @media only screen and (max-width: 1574px) {
+    width: 330px;
+  }
+
+  @media only screen and (max-width: 1364px) {
+    width: 300px;
+  }
+
+  @media only screen and (max-width: 1273px) {
+    width: 50%;
+
+    &.filter-col {
+      width: 48%;
+    }
+
+    &:nth-child(3) {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 1089px) {
+    &.filter-col {
+      width: 45%;
+    }
+  }
+
+  @media only screen and (max-width: 1050px) {
+    width: 100% !important;
+
+    &:first-child {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+.efforts-head-buttons {
+  padding: 8px;
+}
+
+.calendar-input {
+  width: 100%;
+
+  :global {
+    .ant-calendar-picker-input {
+      padding: 0 40px;
+    }
+  }
+}
+
+.custom-select-input {
+ :global {
+   .ant-select-selection {
+     padding: 5px 20px;
+   }
+ }
+}
+
+.reset-button-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.user-radio-wrap {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  &__label {
+    margin-right: 10px;
+    font-family: Red Hat Display;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    color: @defaultColor;
+  }
+
+  :global {
+    .ant-radio-group {
+      height: 30px;
+      display: flex;
+
+      > label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        box-shadow: none !important;
+
+        > span {
+          transition: color .3s linear;
+        }
+
+        &:hover {
+          > span {
+            color: @primary-color !important;
+          }
+        }
+      }
+
+      .ant-radio-button-wrapper {
+        background-color: #FBFBFB;
+        border: 1px solid #D3D1D1;
+        padding: 0 24px;
+        .max-xl({
+          padding: 0 17px;
+        });
+
+        span:last-child {
+          color: @defaultColor;
+          font-family: Red Hat Display;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+        }
+
+        &:first-child {
+          border-radius: 5px 0 0 5px;
+        }
+
+        &:last-child {
+          border-radius: 0px 5px 5px 0;
+        }
+      }
+
+      .ant-radio-button-wrapper-checked {
+        background: #FFFFFF;
+        border: 1px solid @primary-color;
+        box-sizing: border-box;
+
+        span:last-child {
+          font-family: Red Hat Display;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+          color: @primary-color;
+        }
+      }
+
+      .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+        box-shadow: none !important;
+      }
+    }
+  }
+}

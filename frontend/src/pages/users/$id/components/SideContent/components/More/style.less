@@ -1,0 +1,279 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.content-title {
+  font-size: 14px;
+  color: #000;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+  margin: 0;
+}
+
+.working-days-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 56px;
+  margin-top: 40px;
+  .day-item {
+    position: relative;
+    width: 33.33%;
+    text-align: center;
+    padding: 0 15px;
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 60px;
+      width: .5px;
+      background-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 4px rgba(255, 255, 255, 0.15);
+    }
+    &:last-child:after {
+      display: none;
+    }
+    p {
+      color: #B3B3B3;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 19px;
+      letter-spacing: 0.03em;
+      max-width: 100px;
+      margin: 0 auto 20px;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 21px;
+      letter-spacing: 0.03em;
+      color: #000000;
+    }
+  }
+}
+.calendar-block {
+  margin-bottom: 30px;
+  .calendar-with-notes {
+    position: relative;
+    display: flex;
+    border-radius: 6px;
+    border: 1px solid #F6F4FD;
+    min-height: 400px;
+    .calendar {
+      width: 60%;
+    }
+    .notes {
+      width: 40%;
+      background-color: #F6F4FD;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .notes-list-content {
+        .header {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          h4 {
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 19px;
+            letter-spacing: 0.03em;
+          }
+          span {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.03em;
+            color: #B3B3B3;
+          }
+        }
+        .note-item {
+          position: relative;
+          padding-left: 24px;
+          max-height: 300px;
+          overflow-y: scroll;
+          h5 {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            word-break: break-word;
+          }
+          p {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.03em;
+            color: #B3B3B3;
+            margin-bottom: 0;
+            word-break: break-word;
+          }
+          :global {
+            .note-color {
+              position: absolute;
+              left: 0;
+              top: 4px;
+            }
+          }
+
+        }
+      }
+      :global {
+        .add-btn {
+          justify-content: center;
+        }
+      }
+    }
+    .add-note-popup {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: auto;
+      background: #FFF;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      padding: 20px;
+      z-index:22;
+      :global {
+        .ant-input {
+          background-color: #F6F6F6;
+          border-radius: 6px;
+          border: 1px solid #F6F6F6;
+          margin-bottom: 20px;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.04em;
+          color: rgba(0, 0, 0, 0.3);
+          padding: 8px 28px;
+        }
+        .note-textArea {
+          background-color: #fff;
+          border: 1px solid #F6F6F6;
+          box-sizing: border-box;
+          border-radius: 6px;
+          min-height: 140px;
+          resize: none;
+          padding: 16px 28px;
+        }
+        .ant-select {
+          width: 100%;
+        }
+      }
+      .add-note-actions {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+:global {
+  .note-color {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: @defaultColor;
+    &.not_working {
+      background-color: @inactive;
+    }
+    &.additional {
+      background-color: @active;
+    }
+  }
+  .no-border-select {
+    .ant-select-selection {
+      border: none;
+    }
+  }
+  .ant-fullcalendar td {
+    padding: 0;
+  }
+  .ant-fullcalendar-cell {
+    margin: 0;
+    padding: 0;
+  }
+  .ant-fullcalendar-next-month-btn-day {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0s;
+  }
+  .ant-fullcalendar-last-month-cell {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0s;
+  }
+  .ant-fullcalendar-fullscreen .ant-fullcalendar-date {
+    margin: 0;
+    padding: 11px 0;
+    border: 1px solid #f4f4f4;
+  }
+  .ant-fullcalendar-fullscreen .additional {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    margin-bottom: 0;
+    background-color: #22D89A;
+  }
+  .ant-fullcalendar-fullscreen .not_working {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    margin-bottom: 0;
+    background-color: #FA3B4B;
+  }
+  .ant-fullcalendar-header .ant-radio-group {
+    display: none !important;
+  }
+  .ant-fullcalendar-fullscreen .ant-fullcalendar-content {
+    height: 2px !important;
+  }
+  .ant-badge-not-a-wrapper .ant-badge-status-dot {
+    width: 10px !important;
+    height: 10px !important;
+  }
+  .ant-fullcalendar-content .events {
+    max-height: 100%;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .ant-badge-not-a-wrapper .ant-badge-status-additional {
+    background-color: #22D89A !important;
+  }
+  .ant-badge-not-a-wrapper .ant-badge-status-not_working {
+    background-color: #FA3B4B !important;
+  }
+}
+
+.vacations-block {
+  .vacations-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 40px;
+    button {
+      margin-left: 20px;
+    }
+  }
+}

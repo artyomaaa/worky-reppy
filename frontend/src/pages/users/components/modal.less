@@ -1,0 +1,97 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.addUserModal {
+  width: unset !important;
+
+  :global {
+    .ant-modal-content {
+      width: 820px !important;
+    }
+
+    .ant-legacy-form-item {
+      margin-bottom: 20px;
+
+      label {
+        margin-right: 10px;
+      }
+    }
+
+    .ant-select-search {
+      input {
+        height: 100% !important;
+        margin-top: 3px;
+      }
+    }
+
+    .ant-select {
+      border: none;
+    }
+
+    .ant-select-selection {
+      margin-top: 0;
+      border-radius: 12px;
+      height: 100% !important;
+    }
+
+    .position-sel {
+      .ant-select-selection {
+        padding: 0;
+      }
+    }
+
+    .ant-select-search__field {
+      margin-top: 0 !important;
+    }
+
+    .ant-select-selection__rendered {
+      margin-left: 0 !important;
+      height: 44px !important;
+    }
+
+    .ant-select-arrow {
+      margin-right: 5px !important;
+    }
+
+    .ant-input {
+      height: 46px;
+    }
+
+    .textarea-field {
+      border-radius: 12px;
+      min-height: 82px;
+    }
+
+    .has-error .ant-select-selection {
+      border-color: #ff4d4f;
+    }
+  }
+
+  .modal-footer {
+    margin-top: 5px;
+
+    > button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #4A54FF;
+    }
+  }
+
+  .modal-footer-cancel {
+    background-color: #ffffff;
+    color: #4A54FF;
+    margin-right: 20px;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #7C83FF;
+    }
+  }
+
+  .modal-footer-submit {
+
+  }
+}
+
+

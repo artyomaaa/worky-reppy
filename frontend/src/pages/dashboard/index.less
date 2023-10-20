@@ -1,0 +1,110 @@
+.dashboard {
+  position: relative;
+
+  .row-padding {
+    padding: 40px 40px 40px 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+
+    :global {
+      .ant-calendar-range-picker-separator {
+        display: none;
+      }
+    }
+
+    .rangePicker-width {
+      width: 217px;
+
+      :global {
+        .anticon {
+          position: absolute;
+          left: 0;
+          margin-left: 20px;
+        }
+
+        .ant-calendar-range-picker-input {
+          position: absolute;
+          width: 44%;
+
+          &:first-child {
+            left: 40px;
+          }
+
+          &:last-of-type {
+            right: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  :global {
+    .ant-card {
+      border-radius: 0;
+      margin-bottom: 24px;
+
+      &:hover {
+        box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.05);
+      }
+    }
+
+    .ant-card-body {
+      overflow-x: hidden;
+    }
+  }
+
+  .weather {
+    &:hover {
+      box-shadow: 4px 4px 40px rgba(143, 201, 251, 0.6);
+    }
+  }
+
+  .quote {
+    &:hover {
+      box-shadow: 4px 4px 40px rgba(246, 152, 153, 0.6);
+    }
+  }
+
+  .dashboard-calendar-input {
+    width: 280px;
+
+    @media(max-width: 767px) {
+      width: 100%;
+    }
+
+    :global {
+      .ant-input {
+        position: relative;
+        padding-left: 35px
+      }
+
+      .ant-calendar-range-picker-input {
+        text-align: end;
+        font-weight: 500;
+        width: 46%;
+      }
+
+      .ant-calendar-range-picker-separator {
+        display: none;
+      }
+
+      .ant-calendar-picker-clear {
+        display: none;
+        background: #F4F8FB;
+      }
+
+    }
+  }
+
+  .calendar-icon {
+    position: absolute;
+    left: 0;
+    margin-left: 19px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+}

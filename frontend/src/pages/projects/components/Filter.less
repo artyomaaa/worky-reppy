@@ -1,0 +1,338 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.app-datepicker {
+  :global {
+    top: 290px !important;
+    left: 300px !important;
+
+    .ant-calendar {
+      padding: 0;
+    }
+
+    .ant-calendar-header {
+      padding: 7px 20px 0 20px;
+    }
+
+    .ant-calendar-input-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .ant-calendar-date-input-wrap {
+      display: flex;
+      flex-basis: 20%;
+      margin: 0
+    }
+
+    .ant-calendar-body {
+      padding: 12px 20px;
+      border-top: none;
+    }
+
+    .ant-calendar-range-left {
+      border-right: 0.3px solid rgba(222, 222, 222, 0.57);
+    }
+    .ant-calendar-input {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #000000;
+      opacity: 53%;
+    }
+  }
+}
+
+:global {
+  #statuses.ant-select {
+    width: 100%;
+  }
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-size: 12px;
+    width: 174px;
+  }
+}
+
+
+.parent-row__head {
+  .head-search--bar {
+    width: 330px;
+
+    .taskSearch {
+      align-items: center;
+      display: flex;
+      margin-right: 40px;
+      margin-bottom: 0;
+    }
+
+      :global {
+        .ant-input-search-icon, .ant-input-clear-icon {
+          display: none;
+        }
+
+        .app-search-input {
+          margin-left: 0px;
+          width: 100%;
+          font-weight: 500;
+        }
+    }
+  }
+
+  .second-row__head {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .user-calendar-input {
+      width: 250px;
+
+      :global {
+        .ant-input {
+          position: relative;
+          padding-left: 20%;
+        }
+
+        .ant-calendar-range-picker-input {
+          text-align: left;
+          font-weight: 500;
+        }
+
+        .ant-calendar-range-picker-separator {
+          display: none;
+        }
+
+        .ant-calendar-picker-clear {
+          display: none;
+          margin-right: 15px;
+          background: #F4F8FB;
+        }
+      }
+    }
+
+    :global {
+      .ant-calendar-picker {
+        &:hover .ant-calendar-picker-clear {
+          display: block;
+          right: 11px;
+        }
+
+        &:hover .ant-calendar-picker-clear + .ant-calendar-picker-icon {
+          display: block;
+        }
+      }
+    }
+
+    .user-radio-wrap {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+
+      &__label {
+        margin-right: 10px;
+        font-family: Red Hat Display;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.03em;
+        color: @defaultColor;
+      }
+
+      :global {
+        .ant-radio-group {
+          height: 30px;
+
+          > label {
+            height: 100%;
+            box-shadow: none !important;
+          }
+
+          .ant-radio-button-wrapper {
+            display: inline-flex;
+            align-items: center;
+            background-color: #FBFBFB;
+            border: 1px solid #D3D1D1;
+            padding: 0 24px;
+            .max-xl({
+              padding: 0 17px;
+            });
+
+            & > span {
+              transition: color .3s linear;
+            }
+
+            &:hover > span {
+              color: @primary-color !important;
+            }
+
+            span:last-child {
+              color: @defaultColor;
+              font-family: Red Hat Display;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 12px;
+              line-height: 16px;
+              letter-spacing: 0.05em;
+            }
+
+            &:first-child {
+              border-radius: 5px 0 0 5px;
+            }
+
+            &:last-child {
+              border-radius: 0px 5px 5px 0;
+            }
+          }
+
+          .ant-radio-button-wrapper-checked {
+            background: #FFFFFF;
+            border: 1px solid @primary-color;
+            box-sizing: border-box;
+
+            span:last-child {
+              font-family: Red Hat Display;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 12px;
+              line-height: 16px;
+              letter-spacing: 0.05em;
+              color: @primary-color;
+            }
+          }
+
+          .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+            box-shadow: none !important;
+          }
+        }
+      }
+    }
+
+    .user-button-wrap {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+
+      :global {
+        .ant-btn {
+          background: #FFFFFF;
+          height: 30px;
+          border: 1px solid @primary-color;
+          box-sizing: border-box;
+          color: @primary-color;
+          font-weight: bold;
+          font-style: normal;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+        }
+      }
+    }
+  }
+
+  .label-head {
+    .label-head__text, > span {
+      font-family: Red Hat Display;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+      color: @defaultColor;
+      margin-right: 20px;
+    }
+
+    .label-head__text {
+      .max-lg({
+        display: none;
+      })
+    }
+  }
+
+  .head__calendar-icon {
+    width: 22px;
+    height: 22px;
+    margin: -9px 10px 0 10px;
+    position: absolute;
+    left: 0;
+  }
+
+  .head__search-icon {
+    position: absolute;
+    left: 0;
+  }
+}
+
+.second-row__head {
+  padding-bottom: 40px;
+  @media(max-width: 768px) {
+    padding-bottom: unset;
+  }
+
+  .secondRow-export {
+    @media (max-width: 1080px) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+    @media(max-width: 768px) {
+      position: initial;
+      left: unset;
+      bottom: unset;
+    }
+  }
+}
+
+
+.exportDropdown {
+  :global {
+    .ant-dropdown-menu-item > a, .ant-dropdown-menu-submenu-title > a {
+      font-weight: bold;
+      font-size: 14.5px;
+      color: rgb(0, 0, 0) !important;
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+
+    .ant-select-dropdown, .ant-dropdown {
+      box-shadow: none;
+    }
+
+    .ant-dropdown-menu {
+      margin-top: 16px;
+      padding: 0;
+      background: #FFFFFF;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+
+      .ant-dropdown-menu-item {
+        padding: 6px 20px;
+        font-weight: bold;
+        font-size: 14.5px;
+      }
+
+      :first-child {
+        padding-top: 12px;
+        border-radius: 12px;
+      }
+
+      :last-child {
+        padding-bottom: 12px;
+        border-radius: 12px;
+      }
+    }
+  }
+}
+
+

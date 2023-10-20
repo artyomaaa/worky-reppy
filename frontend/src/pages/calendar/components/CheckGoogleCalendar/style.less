@@ -1,0 +1,17 @@
+@import '~themes/abstracts/mixin';
+@import '~themes/abstracts/default';
+
+.check-google-calendar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  .google-link-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    cursor: pointer;
+  }
+  .google-link-label {
+    .text-style(16px, bold, 21px, @black-color, left);
+  }
+}

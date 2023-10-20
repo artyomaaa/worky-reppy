@@ -1,0 +1,124 @@
+:global {
+  .app-btn {
+    .button(20px, 20px, 42px, 1px solid @defaultColor, 14px, @defaultColor, 60px);
+    background-color: rgba(184, 184, 184, 0.1);
+    &.md {
+      min-width: 140px;
+    }
+    &.lg {
+      min-width: 165px;
+    }
+    svg {
+      margin-right: 16px;
+      @media(max-width: 370px) {
+        margin-right: 6px;
+      }
+      path {
+        fill: @defaultColor;
+        transition: all ease .3s;
+      }
+    }
+  }
+  .primary-btn {
+    color: @white-color;
+    border-color: @button-color;
+    background-color: @button-color;
+    svg {
+      path {
+        fill: @white-color;
+      }
+    }
+    &:hover, &:focus {
+      color: @white-color;
+      background-color: @purple-color;
+      border-color: @purple-color;
+      svg {
+        path {
+          fill: @white-color;
+        }
+      }
+    }
+  }
+  .secondary-btn {
+    color: @dark-text-color;
+    border-color: @white-color;
+    background-color: @white-color;
+    svg {
+      path {
+        fill: @dark-text-color;
+      }
+    }
+    &:hover {
+      color: @white-color;
+      background-color: @purple-color;
+      border-color: @purple-color;
+    }
+  }
+  .primary-btn-outline {
+    color: @button-color;
+    border-color: @button-color;
+    background-color: transparent;
+    svg {
+      path {
+        fill: @button-color;
+      }
+    }
+    &:hover {
+      color: @white-color;
+      border-color: @white-color;
+      background-color: @purple-color;
+      svg {
+        path {
+          fill: @white-color;
+        }
+      }
+    }
+  }
+  .secondary-btn-outline {
+    color: @white-color;
+    border-color: @white-color;
+    background-color: transparent;
+    svg {
+      path {
+        fill: @white-color;
+      }
+    }
+    &:hover {
+      color: @dark-text-color;
+      border-color: @white-color;
+      background-color: @white-color;
+    }
+  }
+
+  .add-btn {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    color: @button-color;
+    cursor: pointer;
+    transition: all ease .3s;
+    &:hover {
+      color: #4A54FF;
+    }
+  }
+
+  .btn-linked{
+    white-space: nowrap;
+    color: #4A54FF;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Red Hat Display';
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    svg{
+      margin-left: 13px;
+    }
+  }
+}

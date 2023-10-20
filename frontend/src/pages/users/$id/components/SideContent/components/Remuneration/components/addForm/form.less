@@ -1,0 +1,86 @@
+@import '~themes/abstracts/default.less';
+@titleMarginBottom: 40px;
+
+.dFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textStyle {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+.content-title:extend(.textStyle) {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: @titleMarginBottom;
+}
+
+.salary-col {
+  :global {
+    .has-error {
+      .ant-select-selection {
+        border-color: transparent !important;
+      }
+
+      .ant-input {
+        border-color: #ff4d4f !important;
+      }
+    }
+  }
+}
+
+.bonus-col, .overtime-col, .salary-col {
+  @media(max-width: 1150px) {
+    width: 100%;
+  }
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 40px 20px 40px;
+}
+
+.form-delete-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  .ml156 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #F8F8FB;
+    border-radius: 10px;
+    cursor: pointer;
+
+    svg {
+      g {
+        path {
+          fill: @inactive;
+        }
+      }
+    }
+  }
+}
+
+.bonus-elements-container {
+  :global {
+    .ant-select-selection {
+      display: flex;
+      align-items: center;
+      color: #000000;
+      padding: 5px 0 !important;
+
+      .ant-select-selection-selected-value {
+        font-weight: 700;
+      }
+    }
+  }
+}

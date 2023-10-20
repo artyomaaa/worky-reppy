@@ -1,0 +1,18 @@
+import React from "react";
+import PropTypes from 'prop-types';
+
+export default function File(props) {
+  return (
+    <svg width="14" height="14" viewBox="0 0 19 20" fill="none" style={props.style}>
+      <path d="M17.8666 9.19907L10.2083 16.8574C9.27011 17.7956 7.99763 18.3227 6.67081 18.3227C5.34399 18.3227 4.07151 17.7956 3.13331 16.8574C2.19511 15.9192 1.66803 14.6467 1.66803 13.3199C1.66803 11.9931 2.19511 10.7206 3.13331 9.7824L10.7916 2.12407C11.4171 1.4986 12.2654 1.14722 13.15 1.14722C14.0345 1.14722 14.8828 1.4986 15.5083 2.12407C16.1338 2.74954 16.4852 3.59786 16.4852 4.4824C16.4852 5.36695 16.1338 6.21527 15.5083 6.84074L7.84164 14.4991C7.52891 14.8118 7.10475 14.9875 6.66248 14.9875C6.2202 14.9875 5.79604 14.8118 5.48331 14.4991C5.17058 14.1863 4.99488 13.7622 4.99488 13.3199C4.99488 12.8776 5.17058 12.4535 5.48331 12.1407L12.5583 5.07407" stroke={props.stroke} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  )
+}
+File.defaultProps = {
+  stroke: '#4A54FF',
+  style: {},
+};
+File.propTypes = {
+  stroke: PropTypes.string,
+  style: PropTypes.object,
+};

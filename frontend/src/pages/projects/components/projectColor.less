@@ -1,0 +1,234 @@
+.wrapper {
+  min-height: 30px;
+
+  .colorBoxWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    @media (max-width: 768px) {
+      flex: 1;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    > div {
+      @media (max-width:768px) {
+        width: 100%;
+        justify-content: flex-start;
+        > div {
+          width: 100%;
+        }
+      }
+    }
+
+    .colorPickerBlock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media(max-width: 768px) {
+        justify-content: flex-start;
+      }
+
+      :global {
+        .ant-input-affix-wrapper {
+          width: 110px;
+        }
+      }
+    }
+
+    .colorItem {
+      display: flex;
+      justify-content: flex-end;
+      width: initial;
+      margin-bottom: 0 !important;
+
+      @media (max-width: 425px) {
+        width: min-content;
+      }
+      @media (max-width: 768px) {
+        margin-top: 23px;
+        width: 100%;
+        > div {
+          width: 100%;
+        }
+      }
+
+      :global {
+        .ant-form-explain {
+          position: absolute;
+          left: 30px;
+          line-height: 20px;
+          color: #f5222d;
+          width: 100%;
+          display: inline-flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .colorPickerField {
+      margin-left: 16px;
+      border-radius: 12px;
+      @media (max-width: 425px) {
+        width: initial;
+      }
+
+      :global {
+        .ant-input-prefix {
+          color: #323232;
+          font-size: 16px;
+          font-weight: bold;
+          @media (max-width: 425px) {
+            left: 25px;
+          }
+        }
+      }
+
+      > input {
+        box-shadow: none;
+        background-color: #F6F6F6;
+        padding-left: 35px;
+        border-radius: 5px;
+        height: 30px!important;
+        border: none;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.04em;
+        color: #323232;
+        width: 100%;
+        @media (max-width: 425px) {
+          display: flex;
+          flex-direction: column;
+          width: 149px;
+          height: 45px;
+          border-radius: 12px;
+          padding-left: 55px;
+        }
+        :global {
+          .ant-legacy-form-item-control {
+            height: 30px;
+          }
+        }
+      }
+    }
+
+    .colorBox {
+      display: block;
+      position: relative;
+      padding-left: 40px;
+      padding-bottom: 0;
+      height: 30px;
+      width: 30px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      margin-right: 0;
+
+      @media (max-width: 767px) {
+        height: 45px;
+        width: 45px;
+        margin-right: 15px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      //Future use
+      //@media (max-width: 385px) {
+      //  height: 40px;
+      //  width: 40px;
+      //  margin-right: 20px;
+      //}
+
+      input {
+        display: none;
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .colorBoxCheckmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 30px;
+        width: 30px;
+        background-color: #eee;
+        border-radius: 50%;
+        @media (max-width: 767px) {
+          height: 45px;
+          width: 45px;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          opacity: 0;
+          transform: scale(0.6);
+          transition: 0.3s;
+        }
+      }
+
+      &:hover input ~ .colorBoxCheckmark {
+        background-color: #ccc;
+      }
+
+      input:checked ~ .colorBoxCheckmark {
+        &:after {
+          opacity: 1;
+          transform: scale(.8);
+        }
+      }
+      .colorBoxCheckmark:after {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'%3E%3Cpath d='M21 6.285l-11.16 12.733-6.84-6.018 1.319-1.49 5.341 4.686 9.865-11.196 1.475 1.285z'/%3E%3C/svg%3E");
+        top: 3px;
+        left: 3px;
+        width: 24px;
+        height: 24px;
+        @media (max-width: 767px) {
+          top: 12px;
+          left: 11px;
+        }
+      }
+    }
+  }
+
+  :global {
+    .hue-picker {
+      border-radius: 10px;
+      max-width: 170px !important;
+      margin: auto;
+
+      .pickerAnim-enter {
+        transform: translateX(-15px);
+        opacity: 0;
+      }
+
+      .pickerAnim-exit {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .pickerAnim-enter-active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .pickerAnim-exit-active {
+        transform: translateX(15px);
+        opacity: 0;
+      }
+
+      .pickerAnim-enter-active,
+      .pickerAnim-exit-active {
+        transition: all 300ms;
+      }
+    }
+  }
+}
+

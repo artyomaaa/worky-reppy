@@ -1,0 +1,18 @@
+import React from "react";
+import PropTypes from 'prop-types';
+
+export default function ArrowDown2 (props) {
+  return (
+    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" style={props.style}>
+      <path d="M11.8082 1.23107L11.4151 0.835259C11.2914 0.711648 11.1268 0.64355 10.9509 0.64355C10.7751 0.64355 10.6103 0.711648 10.4866 0.835259L6.00268 5.31939L1.51357 0.830283C1.39006 0.706673 1.22528 0.638672 1.04947 0.638672C0.873666 0.638672 0.708786 0.706673 0.585176 0.830283L0.192002 1.22365C-0.0640005 1.47946 -0.0640005 1.89615 0.192002 2.15195L5.53683 7.516C5.66034 7.63951 5.82493 7.72654 6.00229 7.72654H6.00434C6.18025 7.72654 6.34483 7.63941 6.46835 7.516L11.8082 2.16649C11.9319 2.04298 11.9998 1.87341 12 1.69761C12 1.5217 11.9319 1.35448 11.8082 1.23107Z" fill={props.fill}/>
+    </svg>
+  )
+}
+ArrowDown2.defaultProps = {
+  fill: '#353FDF',
+  style: {}
+};
+ArrowDown2.propTypes = {
+  style: PropTypes.object,
+  fill: PropTypes.string
+};

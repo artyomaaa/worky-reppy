@@ -1,0 +1,146 @@
+@import '~themes/abstracts/mixin.less';
+@import '~themes/abstracts/default';
+
+.account-wrapper {
+  margin-left: 16px;
+  max-width: 275px;
+  cursor: pointer;
+
+  > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    .account-avatar {
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+
+    .account-info {
+      margin-right: 20px;
+      width: calc(100% - 40px);
+
+      .account-name {
+        .text-style(14px, bold, 19px, @black-color, left);
+        .ellipsis(100%);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .account-position {
+        .text-style(14px, 500, 21px, rgba(@black-color, .5), left);
+        .ellipsis(100%);
+      }
+
+      &.transparent {
+        .account-name {
+          color: @white-color;
+        }
+
+        .account-position {
+          color: rgba(@white-color, .5);
+        }
+      }
+    }
+  }
+}
+
+.account-dropdown {
+  border-radius: 10px;
+  top: 85px !important;
+
+  &.fixed {
+    position: fixed;
+    top: 80px !important;
+  }
+
+  .userTopMenu {
+    width: 245px;
+    padding: 12px 0;
+    border-radius: 10px;
+    box-shadow: none;
+
+    li {
+      padding: 15px 20px;
+      .text-style(16px, bold, 21px, @defaultColor, left);
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      position: relative;
+      transition: all ease .3s;
+
+      svg {
+        margin-right: 20px;
+        width: 25px !important;
+        height: 25px !important;
+
+        path {
+          transition: all ease .3s;
+        }
+      }
+
+      &:hover {
+        color: #040404;
+        background-color: #FBFBFB !important;
+
+        svg {
+          path {
+            stroke: #686DE6;
+          }
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          height: 40px;
+          width: 2px;
+          left: 0;
+          background: @button-color;
+          border-radius: 0 30px 30px 0;
+        }
+      }
+
+      &:last-child {
+        svg {
+          margin-right: 18px;
+        }
+
+        padding: 15px 22px;
+
+        &:before {
+          display: none;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          width: calc(100% - 20px);
+          background-color: rgba(163, 163, 173, 0.21);
+          height: 1px;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        &:hover {
+          svg {
+            path {
+              fill: #686DE6;
+              stroke: #686DE6;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

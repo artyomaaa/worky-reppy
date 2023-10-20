@@ -1,0 +1,64 @@
+:global {
+  #statuses.ant-select {
+    width: 100%;
+  }
+}
+
+.filter-second-row {
+  border-bottom: 0;
+  .filter-radio-wrap {
+    margin-right: auto;
+    margin-left: 30px !important;
+  }
+}
+
+.teams-mobile-filter-row {
+  flex-direction: row-reverse;
+}
+
+.app-datepicker {
+  :global {
+    top: 290px !important;
+    left: 300px !important;
+    @media(max-width: 991px) {
+      left: 130px !important;
+    }
+
+    .ant-calendar {
+      padding: 0;
+    }
+
+    .ant-calendar-header {
+      padding: 7px 20px 0 20px;
+    }
+
+    .ant-calendar-input-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .ant-calendar-date-input-wrap {
+      display: flex;
+      flex-basis: 20%;
+      margin: 0
+    }
+
+    .ant-calendar-body {
+      padding: 12px 20px;
+      border-top: none;
+    }
+
+    .ant-calendar-range-left {
+      border-right: 0.3px solid rgba(222, 222, 222, 0.57);
+    }
+    .ant-calendar-input {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #000000;
+      opacity: 53%;
+    }
+  }
+}

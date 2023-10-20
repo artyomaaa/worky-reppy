@@ -1,0 +1,129 @@
+.status-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 20px;
+  background-color: @white-color;
+  overflow: auto;
+
+  .status-container-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .status-title {
+      align-self: center;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-bottom: 40px;
+    }
+  }
+
+  .filter-pdd {
+    padding: 0;
+    margin-bottom: auto;
+    .status-filter {
+      width: 100%;
+      padding: 10px 0 !important;
+      .input-style {
+        width: 100%;
+        padding: 10px 0 !important;
+        .input-datePicker {
+          width: 100%;
+        }
+
+        .user-calendar-input {
+          padding-left: 20px;
+        }
+      }
+    }
+
+    .filter-by-button-col {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      margin-left: 0px !important;
+      padding: 10px 0 !important;
+      margin-bottom: 50px;
+
+      .status-subtitle {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.03em;
+        color: #B3B3B3;
+        margin-bottom: 20px;
+      }
+
+      .status-btn {
+        width: 100%;
+        :global {
+         label {
+           width: 50%;
+         }
+        }
+      }
+
+      .reset-btn-content {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-end;
+        margin-top: 10px;
+
+        .reset-btn {
+          width: 50%;
+        }
+      }
+    }
+
+    .confirm-status-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 0 !important;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+
+      .cencel-btn {
+        margin-right: 12.5px;
+        margin-left: 20px;
+        background: @white-color;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        border: 2px solid @button-color;
+        box-sizing: border-box;
+        border-radius: 60px;
+        color: @button-color;
+        width: 50%;
+        height: 42px;
+        font-weight: bold;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+      }
+
+      .save-btn {
+        margin-left: 12.5px;
+        margin-right: 20px;
+        background: @button-color;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        border-radius: 60px;
+        color: @white-color;
+        font-weight: bold;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+        width: 50%;
+        height: 42px
+      }
+    }
+  }
+}

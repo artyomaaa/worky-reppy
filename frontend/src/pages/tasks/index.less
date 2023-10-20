@@ -1,0 +1,164 @@
+.tasks-page {
+  &_header {
+    padding: 20px;
+    @media (max-width: 767px) {
+      padding: 0;
+    }
+
+    &-row {
+      padding: 0 20px;
+      @media (max-width: 1235px) {
+        padding: 0;
+      }
+    }
+  }
+
+  &_report-btn {
+    margin-left: 16px;
+  }
+
+  &_header-row_right {
+    display: flex;
+    justify-content: flex-end;
+
+    .tasks-page_total {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 21px;
+      letter-spacing: 0.05em;
+      color: @defaultColor;
+      text-transform: uppercase;
+
+      .total-duration {
+        min-width: 80px;
+        margin-left: 20px;
+        color: @secondary-color;
+      }
+    }
+  }
+
+  :global {
+    .app-datepicker-input {
+      width: 130px;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+      .ant-calendar-picker-input {
+        -webkit-appearance: none;
+      }
+    }
+  }
+}
+
+.tasks-page_header-row {
+  :global {
+    .ant-col-lg-16 {
+      @media (max-width: 670px) {
+        flex-wrap: wrap
+      }
+
+      > div {
+        &:first-child {
+          @media (max-width: 767px) {
+            width: 35%;
+          }
+          @media (max-width: 508px) {
+            padding-bottom: 20px;
+            width: 100%;
+          }
+        }
+
+        &:last-child {
+          @media (max-width: 670px) {
+            padding-top: 20px;
+            margin: 0;
+          }
+        }
+      }
+
+      > span {
+        @media (max-width: 767px) {
+          width: 61%;
+        }
+        @media (max-width: 508px) {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+
+    .ant-col-lg-8 {
+      @media (max-width: 767px) {
+        width: 100%;
+        padding-bottom: 33px !important;
+      }
+
+      > div {
+        &:first-child {
+          @media (max-width: 767px) {
+            justify-content: space-between;
+          }
+        }
+
+        .ant-radio-group {
+          @media (max-width: 767px) {
+            margin: 0 !important;
+          }
+        }
+      }
+    }
+
+    .primary-btn-outline {
+      color: #FFFFFF;
+      border-color: #FFFFFF;
+      background-color: rgba(74, 84, 255, 0.7);
+
+      svg path {
+        fill: #FFFFFF;
+      }
+
+      &:hover {
+        color: rgba(74, 84, 255, 0.7);
+        border-color: rgba(74, 84, 255, 0.7);
+        background-color: #FFFFFF;
+
+        svg path {
+          fill: rgba(74, 84, 255, 0.7);
+        }
+      }
+    }
+  }
+
+  .tasks-page_report-btn {
+    .cursor-disable-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: unset;
+      font-weight: bold;
+      padding: 0;
+      line-height: 18px;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+.tasks-page-header-row-right_filter {
+  margin-left: 40px;
+
+  @media only screen and (max-width: 1195px) {
+    margin-left: 0;
+  }
+}
+  :global {
+    .ant-popover-placement-topLeft > .ant-popover-content > .ant-popover-arrow {
+      display: none;
+    }
+    .ant-popover-placement-top, .ant-popover-placement-topLeft, .ant-popover-placement-topRight {
+      padding-bottom: 0;
+  }
+    .ant-popover-inner-content {
+      padding: 7px 16px;
+    }
+  }

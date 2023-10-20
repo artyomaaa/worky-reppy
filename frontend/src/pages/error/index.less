@@ -1,0 +1,69 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.error-page {
+  position: relative;
+  &:before {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    content: "";
+    width: 964px;
+    height: 100vh;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../../../public/img/landing/error-bg.png");
+    @media (max-width: @screen-max-lg) {
+      display: none;
+    }
+  }
+  .error-page-header {
+    padding-top: 60px;
+  }
+  .error-page-content {
+    padding-top: 60px;
+    width: 322px;
+    margin: 0 auto;
+    position: relative;
+    @media (max-width: @screen-max-lg) {
+      width: 100%;
+      text-align: center;
+    }
+    .img-block {
+      height: 110px;
+      display: inline-block;
+      @media (max-width: @screen-max-sm) {
+        height: 60px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .error-text {
+      letter-spacing: 0.135em;
+      font-size: 18px;
+      color: #2F2F2F;
+      margin: 67px auto;
+    }
+    :global {
+      .primary-btn {
+        width: auto;
+        margin: 0 auto;
+      }
+    }
+  }
+  .error-page-img {
+    height: calc(100vh - 120px);
+    @media (max-width: @screen-max-lg) {
+      display: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

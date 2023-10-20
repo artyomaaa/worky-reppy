@@ -1,0 +1,313 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.price {
+  padding: 84px 15px 176px 15px;
+  background: #FAFAFA;
+  @media only screen and (max-width: @screen-max-md) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  h2 {
+    font-size: 52px;
+    line-height: 66px;
+    letter-spacing: 1px;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 26px;
+    text-align: center;
+    @media only screen and (max-width: 1316px) {
+      font-size: 28px;
+      margin-bottom: 25px;
+      line-height: 45px;
+    }
+    @media only screen and (max-width: @screen-max-md) {
+      font-size: 28px;
+      color: #3B3B3B;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    text-align: center;
+    color: #797A7A;
+    margin-bottom: 0;
+    @media only screen and (max-width: 1316px) {
+      line-height: 31px;
+    }
+    @media only screen and (max-width: @screen-max-md) {
+      max-width: 100%;
+      font-size: 16px;
+      color: #3B3B3BA8;
+    }
+  }
+
+  .price-types {
+    margin-top: 150px;
+  }
+
+  .card {
+    padding: 30px 15px 70px 15px;
+    width: 100%;
+    min-height: 660px;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all ease .3s;
+    @media only screen and (max-width: @screen-max-md) {
+      min-height: 750px;
+    }
+    @media only screen and (max-width: 541px) {
+      min-height: 510px;
+      padding-bottom: 40px;
+    }
+
+    &.card-active {
+      position: relative;
+      transform: scale(1.15);
+      @media only screen and (max-width: @screen-max-md) {
+        transform: scale(1);
+      }
+
+      &:before {
+        height: 350px;
+        background-image: url("../../../public/img/landing/price-color-bg.png");
+        @media only screen and (max-width: @screen-max-md) {
+          height: 500px;
+        }
+        @media only screen and (max-width: 541px) {
+          height: 275px;
+        }
+      }
+
+      .card-header {
+        h6, .card-price, .card-type {
+          color: #ffffff;
+        }
+
+        h5 {
+          color: #ffffff;
+          font-size: 30px;
+          font-weight: 700;
+          @media only screen and (max-width: 700px) {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .card-action {
+        .btn-outline {
+          color: #ffffff;
+          border: 1px solid transparent;
+          background: linear-gradient(264.53deg, rgba(69, 104, 181, 0.8) 7.66%, rgba(123, 131, 253, 0.8) 93.76%);
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      width: 100%;
+      height: 310px;
+      top: 0;
+      position: absolute;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: inline-block;
+      transition: all ease .3s;
+      background-image: url("../../../public/img/landing/price-gray-bg.png");
+      @media only screen and (max-width: @screen-max-md) {
+        top: -115px;
+        height: 535px;
+      }
+      @media only screen and (max-width: 541px) {
+        top: 0;
+        height: 250px;
+      }
+    }
+
+    .card-header {
+      height: 258px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      @media only screen and (max-width: @screen-max-md) {
+        height: 400px;
+      }
+      @media only screen and (max-width: 541px) {
+        height: 258px;
+      }
+
+      h6 {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 1px;
+        color: #000000;
+        transition: all ease .3s;
+        margin-bottom: 45px;
+        @media only screen and (max-width: 1316px) {
+          margin-bottom: 1vw;
+        }
+      }
+
+      h5 {
+        margin-bottom: 45px;
+        @media only screen and (max-width: 1316px) {
+          margin-bottom: 1vw;
+        }
+      }
+
+      .card-price {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 60px;
+        letter-spacing: 1px;
+        color: #000000;
+        transition: all ease .3s;
+        @media only screen and (max-width: 541px) {
+          font-size: 45px;
+        }
+        @media only screen and (max-width: 700px) {
+          font-size: 35px;
+        }
+      }
+
+      .card-type {
+        margin-top: 40px;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1px;
+        color: #4267B2;
+        @media only screen and (max-width: 1316px) {
+          margin-top: 1vw;
+        }
+        @media only screen and (max-width: 700px) {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .card-content, .card-content_mid {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 40px;
+
+      > ul {
+        display: flex;
+        flex-direction: column;
+
+        > li {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .check-icon {
+            display: inline-block;
+            margin-right: 20px;
+            width: 16px;
+            height: 14px;
+            background-image: url("../../../public/img/landing/check-icon.svg");
+          }
+
+          span {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 1px;
+            color: #737679;
+            @media only screen and (max-width: 700px) {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      &_mid {
+        justify-content: center;
+        align-items: center;
+
+        li {
+          transform: scale(.9);
+        }
+      }
+
+      .section-content-img {
+        width: 40%;
+
+        > img {
+          width: 100%;
+        }
+      }
+    }
+
+    .card-action {
+      .btn-outline {
+        transition: all ease .3s;
+        .button(38px, 38px, 56px, 1px solid #4569B6, 16px, #4267B2, 28px);
+        background: transparent;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          border: 1px solid transparent;
+          color: #ffffff;
+          background: linear-gradient(264.53deg, rgba(69, 104, 181, 0.8) 7.66%, rgba(123, 131, 253, 0.8) 93.76%);
+        }
+      }
+    }
+  }
+
+  :global {
+    .slick-track {
+      margin-bottom: 20px !important;
+    }
+
+    .slick-list {
+      padding-top: 40px !important;
+      padding-bottom: 40px !important;
+    }
+
+    .slick-slide {
+      > div {
+        display: flex;
+        justify-content: center;
+        > div {
+          width: 90% !important;
+        }
+      }
+    }
+
+    .slick-current {
+      transform: scale(1.05);
+      transition: 0.6s;
+    }
+
+    .slick-prev {
+      display: none !important;
+    }
+
+    .slick-next {
+      display: none !important;
+    }
+  }
+
+}

@@ -1,0 +1,46 @@
+@import '~themes/abstracts/default.less';
+
+.privacy {
+  padding: 139px 0 50px;
+
+  @media only screen and (max-width: @screen-max-md) {
+    padding-top: 119px;
+  }
+
+  :global {
+    .container {
+      max-width: 1200px;
+    }
+  }
+}
+.privacy-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.privacy-heading {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 54px;
+  letter-spacing: 1px;
+}
+.privacy-policies, .privacy-policy {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.privacy-policy {
+  p {
+    font-size: 16px;
+  }
+}
+.privacy-policy-heading {
+  font-size: 20px;
+}
+.privacy-policy-list {
+  margin-left: 30px;
+}

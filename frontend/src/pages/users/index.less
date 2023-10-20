@@ -1,0 +1,88 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+/*TABLE STYLES OF TEAMS USER */
+.user-table {
+  :global {
+    .ant-pagination {
+      .ant-pagination-item {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: none !important;
+        > a {
+          color: #000;
+          font-weight: bold;
+          font-size: 14px;
+        }
+      }
+      .ant-pagination-item-active {
+        > a {
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: @button-color;
+          color: #fff;
+          height: 36px;
+          width: 36px;
+        }
+      }
+      .ant-pagination-prev {
+        > a{
+          border: none !important;
+          color: #000;
+        }
+      }
+      .ant-pagination-next {
+        > a{
+          color: #000;
+          border: none !important;
+        }
+      }
+      .ant-pagination-disabled {
+        > a{
+          color: #B3B3B3 !important;
+        }
+      }
+    }
+  }
+}
+.table-align-left {
+  :global {
+    .table-avatar {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .role-badge {
+      padding: 5px 20px;
+      background: #F7F7F7;
+      border-radius: 5px;
+      color: @primary-color;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .status-user-inactive {
+      color: #fff;
+      padding: 5px 20px;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      background: @inactive;
+      border-radius: 5px;
+    }
+    .status-user-active {
+      color: #fff;
+      padding: 5px 28px;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      background: #2EB13B;
+      border-radius: 5px;
+    }
+  }
+}

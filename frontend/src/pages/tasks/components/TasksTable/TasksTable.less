@@ -1,0 +1,398 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.paginationBlock {
+  text-align: center;
+  padding: 22px 0;
+
+  :global {
+    .ant-pagination {
+      li {
+        font-family: @font-family-primary;
+        width: 36px;
+        height: 36px;
+
+        a {
+          line-height: 35px;
+        }
+      }
+    }
+
+    .ant-pagination-disabled a {
+      color: #B3B3B3;
+      background: transparent;
+      border: none;
+    }
+
+    .ant-pagination-item-link {
+      color: #000000;
+      background: transparent;
+      border: none;
+    }
+
+    .ant-pagination-item-active {
+      background: #4A54FF !important;
+
+      a {
+        color: #FFFFFF !important;
+      }
+    }
+
+    .ant-pagination-item {
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+    }
+
+    .ant-pagination-item a {
+      font-weight: bold;
+      font-size: 13.5px;
+      letter-spacing: 0.05em;
+      color: #000000;
+    }
+  }
+}
+
+.task-name-block {
+  display: inline-block;
+}
+
+.task-name-tick {
+  padding-right: 10px;
+}
+
+.task-name {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  .ellipsis(290px);
+  @media (max-width: 767px) {
+    .ellipsis(130px);
+  }
+}
+
+.project-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .project-name {
+    display: inline-block;
+    color: @white-color;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    min-width: 80px;
+    margin-right: 35px;
+    .ellipsis(125px);
+    @media (max-width: 767px) {
+      margin-right: 17px;
+      .ellipsis(120px);
+    }
+  }
+
+  .reppyBtn {
+    min-width: 80px;
+    height: 26px;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    color: #fff;
+    background: #ccc;
+    border-radius: 5px;
+    border: none;
+    max-width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+:global {
+  .row-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .action-icons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 90px;
+
+      span {
+        cursor: pointer;
+      }
+
+      .icon-with-bg {
+        width: 35px;
+        height: 35px;
+        margin: 5px;
+        background: transparent;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background .3s linear;
+        svg {
+          g {
+            clip-path: inset(0px);
+          }
+        }
+
+        &:hover {
+          background-color: #F8F8FB;
+        }
+      }
+
+      svg {
+        :nth-child(n) {
+          fill: #B6B6B6;
+        }
+      }
+
+      :first-child {
+        &:hover {
+          svg {
+            :nth-child(n) {
+              fill: @button-color;
+            }
+          }
+        }
+      }
+
+      :last-child {
+        &:hover {
+          svg {
+            :nth-child(n) {
+              fill: @inactive;
+            }
+          }
+        }
+      }
+
+    }
+
+    .play-task-icon {
+      min-width: 44px;
+
+      .play-btn {
+        border: none;
+        box-shadow: none;
+        background: transparent;
+
+        svg :nth-child(n) {
+          fill: @button-color;
+        }
+
+        &:hover {
+          svg :nth-child(n) {
+            transition: 0.5s;
+            fill: @button-color;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}
+
+.delete-modal {
+  &-content {
+    max-width: 216px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: @text-color;
+  }
+
+  :global {
+    .ant-modal {
+      width: 400px;
+    }
+
+    .ant-modal-header {
+      padding: 40px 60px 0 60px;
+      border-bottom: none;
+    }
+
+    .ant-modal-body {
+      padding: 20px 50px 38px 50px;
+    }
+
+    .app-btn {
+      border: 2px solid #4A54FF;
+
+      &:last-child {
+        margin-left: 16px;
+      }
+
+      &:hover {
+        border: 2px solid #7C83FF;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .modal-footer-actions {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 500px) {
+      .modal-footer-actions {
+        flex-direction: column-reverse;
+        justify-content: center;
+
+        .app-btn {
+          width: 100%;
+          margin: 0;
+        }
+
+        .primary-btn-outline {
+          margin-top: 10px;
+          border: none;
+          color: #A9AAAB;
+          box-shadow: none;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//todo
+//need to check these two classes
+.projectBlackIndicator {
+  color: #000 !important;
+  border: .5px solid #000;
+  background-color: #fff;
+}
+
+.blackText {
+  color: #000 !important;
+}
+
+:global {
+  .data-table-wrapper .data-table thead tr th {
+    padding: 11px 10px 11px 40px;
+    @media (max-width: 767px) {
+      padding: 11px 0 11px 16px;
+    }
+  }
+
+  .data-table-wrapper .data-table tbody tr td {
+    padding: 27px 10px 27px 40px;
+    width: 40%;
+    letter-spacing: 0.05em;
+    @media (max-width: 767px) {
+      padding: 27px 0 27px 6px;
+      width: 15%;
+    }
+
+    &:last-child {
+      min-width: 326px;
+    }
+  }
+
+  .data-table-wrapper .data-table tbody {
+    :global {
+      .ant-table-row-level-1 {
+        td {
+          &:first-child {
+            div {
+              padding-left: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  .row-actions {
+    .action-icons {
+      padding: 0 20px 0 100px;
+      @media (max-width: 767px) {
+        padding: 0 30px 0 0;
+      }
+    }
+
+    .play-task-icon .play-btn {
+      padding: 0 25px;
+    }
+  }
+}
+
+:global {
+  .ant-popover-inner {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(74, 84, 255, 0.1);
+
+    .ant-popover-message {
+      padding: 4px 0 26px;
+    }
+
+    .ant-popover-message > .anticon {
+      display: none;
+    }
+
+    .ant-popover-message-title {
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: @text-color;
+      padding: 0;
+    }
+
+    .ant-popover-buttons {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+
+      .ant-btn-sm {
+        border: none;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+        color: rgba(0, 0, 0, 0.26);
+        box-shadow: none;
+      }
+
+      .ant-btn-primary {
+        font-weight: 700;
+        background-color: transparent;
+        color: @button-color;
+      }
+    }
+
+  }
+}

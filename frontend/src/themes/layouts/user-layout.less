@@ -1,0 +1,297 @@
+@import '~themes/abstracts/default.less';
+
+:global {
+  .user-layout {
+    min-height: 100vh;
+    padding: 50px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../../public/img/login-bg.svg");
+
+    .card {
+      max-width: 594px;
+      min-width: 594px;
+      padding: 60px;
+      background: #FFFFFF;
+      height: auto;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      position: relative;
+      z-index: 1;
+      @media only screen and (max-width: @screen-min-md) {
+        max-width: 90%;
+        min-width: 90%;
+        padding: 60px 30px;
+      }
+      @media only screen and (max-width: 480px) {
+        max-width: 100%;
+        min-width: 100%;
+        padding: 30px 30px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        :global {
+          .brand {
+            .logo a img {
+              width: 100px !important;
+              height: 100px !important;
+            }
+          }
+        }
+
+        .logo-title {
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 21px;
+          letter-spacing: 0.03em;
+          color: #352F53;
+          margin-left: 21px;
+        }
+      }
+    }
+
+    .content {
+      max-width: 435px;
+      margin: 5px auto;
+      @media only screen and (max-width: @screen-max-lg) {
+        max-width: 100%;
+      }
+
+      .btn-next {
+        margin-top: 35px;
+      }
+      :global {
+        .form-input {
+          margin-bottom: 11px;
+        }
+        .ant-legacy-form-item-label {
+          margin-bottom: 6px;
+          padding-bottom: 0px;
+        }
+      }
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #7077FF;
+      margin-top: 35px;
+      margin-bottom: 0px;
+    }
+
+    h1 {
+      font-weight: 900;
+      font-size: 24px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      text-transform: capitalize;
+      color: #7077FF;
+      margin-bottom: 35px;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px;
+      text-align: center;
+      letter-spacing: 0.03em;
+      margin-bottom: 30px;
+      color: #B3B3B3;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 23px;
+      padding-top: 13px;
+      .form-checkbox {
+        margin-bottom: 0;
+       :global {
+         .ant-checkbox {
+           ~ span {
+             padding: 0 10px;
+           }
+         }
+       }
+      }
+    }
+
+    .forgot-pass {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      color: #7C83FF;
+      cursor: pointer;
+    }
+
+    .link-button {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      span {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.03em;
+        color: #B3B3B3;
+        margin-bottom: 20px;
+      }
+
+      a {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 0.03em;
+        color: #7C83FF;
+      }
+    }
+
+    .sign-up-title {
+        margin-top: 35px;
+    }
+
+    &.forgot-password {
+      .card {
+        padding: 27px;
+      }
+    }
+  }
+
+  .steps-form {
+    .ant-steps {
+      padding: 0 15px;
+      @media (max-width: 480px) {
+        padding: 0;
+        display: flex !important;
+      }
+
+      .ant-steps-item {
+        .ant-steps-item-container {
+          @media (max-width: 480px) {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+          }
+
+          .ant-steps-item-icon {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #D4D4D4;
+            width: 34px !important;
+            height: 34px !important;
+            border-radius: 50%;
+
+            .ant-steps-icon {
+              display: inline-block;
+            }
+          }
+
+          &.ant-steps-item-process {
+            .ant-steps-item-icon {
+              background: #7077FF;
+              border: 2px solid #7077FF;
+              box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+            }
+          }
+        }
+      }
+    }
+
+    .ant-steps-horizontal.ant-steps-label-horizontal .ant-steps-item {
+      @media (max-width: 480px) {
+        overflow: hidden;
+      }
+    }
+    .ant-steps-horizontal.ant-steps-label-horizontal > .ant-steps-item > .ant-steps-item-container > .ant-steps-item-tail {
+      width: 133px;
+      height: 1px;
+      padding: 0;
+      top: 16px;
+      left: 80px;
+      border-bottom: 1px dashed #D4D4D4;
+      @media (max-width: 420px) {
+        left: 70px;
+      }
+      @media (max-width: 375px) {
+        left: 60px;
+      }
+    }
+
+    .steps-content {
+      padding-top: 62px;
+      @media (max-width: 480px) {
+        padding-top: 0;
+      }
+    }
+
+    .finished-icon {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      font-family: @font-family-primary;
+
+      .step-number {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #9397DA;
+        border-radius: 50%;
+        border: 2px solid #9397DA;
+        background: rgba(112, 119, 255, 0.49);
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+      }
+
+      .step-icon {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .ant-steps-item-title::after {
+      background-repeat: no-repeat;
+      background-image: url("../../../public/img/points.svg");
+      background-color: unset !important;
+    }
+  }
+  .go-back {
+    margin-bottom: 14px;
+    span {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.03em;
+      color: #4A54FF;
+      margin-left: 10px;
+    }
+  }
+}

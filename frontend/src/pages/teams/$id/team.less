@@ -1,0 +1,489 @@
+.team__container {
+  background: #F5F5FC;
+
+  // temporary
+  & > div:nth-child(2) {
+    background: #ffffff;
+  }
+}
+.team__about {
+  background-color: #ffffff;
+  padding: 40px 40px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px 10px 0 0 ;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  @media (max-width: 767px) {
+    box-shadow: none;
+    padding: 20px;
+  }
+}
+.team__about_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  @media (max-width: 767px) {
+
+  }
+}
+.team__title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 80%;
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.team__title_heading {
+  margin: 0 60px 0 0;
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  color: #000000;
+  white-space: nowrap;
+  @media(max-width: 767px) {
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 60vw;
+    margin:0;
+    margin-bottom: 20px;
+  }
+}
+.team__title_status {
+  border-radius: 5px;
+  padding: 5px 28px;
+  font-family: Red Hat Display;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: #FFFFFF;
+  @media (max-width: 767px) {
+    width: 104px;
+    align-items: flex-start;
+  }
+}
+.team__projects {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 30px 0 30px;
+  width: 100%;
+  height: auto;
+  .team__projects-showMore {
+    align-self: flex-end;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    color: #B3B3B3;
+    display: inline-flex;
+    cursor: pointer;
+
+    &:hover {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    @media(max-width: 767px) {
+      color: #000000;
+      text-decoration: underline;
+    }
+  }
+  .team__projects-showLess {
+    margin: 0;
+    margin-left: 16px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+    color: #B3B3B3;
+    display: inline-flex;
+    cursor: pointer;
+    &:hover {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    @media(max-width: 767px) {
+      color: #000000;
+      text-decoration: underline;
+    }
+  }
+}
+
+.dots {
+  display: inline-flex;
+  justify-content: flex-end;
+  padding: 0 10px 0 5px;
+  @media (min-width: 425px) {
+    display: none
+  }
+}
+
+.team-info__general_actions_dots {
+  display: inline-flex;
+  justify-content: flex-end;
+  align-self: flex-start;
+  @media(min-width: 768px){
+    display:none
+  }
+}
+
+.team__actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  @media(max-width: 767px){
+    display:none
+  }
+
+  button {
+    cursor: pointer;
+    outline: none;
+  }
+
+  .icon-with-bg {
+    border: none;
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    background: transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .3s linear;
+
+    &:hover {
+      background-color: #F8F8FB;
+    }
+  }
+
+  svg {
+    :nth-child(n) {
+      fill: #B6B6B6;
+    }
+  }
+
+  :first-child {
+    &:hover {
+      svg {
+        :nth-child(n) {
+          fill: @button-color;
+        }
+      }
+    }
+  }
+
+  :nth-child(2) {
+    &:hover {
+      svg {
+        :nth-child(n) {
+          fill: @inactive;
+        }
+      }
+    }
+  }
+  :last-child {
+    svg {
+      path {
+        stroke: #B6B6B6;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      svg {
+        path {
+          stroke: black
+        }
+      }
+    }
+  }
+}
+
+.team__actions_delete {
+  margin: 0 20px;
+}
+.team__projects_label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: #000000;
+  align-self: flex-start;
+}
+
+.team__projects_list_container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80vw;
+
+  @media(max-width: 767px) {
+    width: 80vw
+  }
+
+  .team__projects_list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .team__projects_list_item {
+    font-family: Red Hat Display;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    color: #B3B3B3;
+    border-radius: 5px;
+    padding: 5px 0 5px 20px;
+    margin-right: 5px;
+
+    @media(max-width: 767px) {
+      max-width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      span {
+        width: 100%;
+      }
+    }
+    .project-icon {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 10px;
+      margin-bottom: 2px;
+    }
+  }
+}
+.team__date {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0;
+}
+.team__date_label {
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+.team__date_value {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: #B3B3B3;
+}
+.team__date_value {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: #B3B3B3;
+}
+.team__description {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+.team__description_label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.team__description_value {
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  color: #B3B3B3;
+  width: auto;
+  word-break: break-word;
+}
+
+.team-table-title-column {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding:0 40px;
+
+   h4 {
+     font-family: Red Hat Display;
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 700;
+     line-height: 26px;
+     letter-spacing: 0.03em;
+     text-align: left;
+   }
+  @media(max-width: 767px) {
+    padding: 0 20px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 0;
+      width: calc(100% + 24px);
+      height: 0.5px;
+      background-color: rgba(0, 0, 0, .1);
+    }
+  }
+}
+
+.projects-participants__username {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .projects-participants__avatar {
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+
+  .projects-participants__emptyAvatar {
+    width: 40px;
+    height: 40px;
+    background-color: #cccccc;
+    display: inline-block;
+    border-radius: 50%;
+  }
+
+  .projects-participants__name {
+    margin: 0 0 0 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+}
+
+.deactivation-modal {
+  &-content {
+    max-width: 216px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: @text-color;
+  }
+
+  :global {
+    .ant-modal {
+      width: 400px;
+    }
+
+    .ant-modal-header {
+      padding: 40px 60px 0 60px;
+      border-bottom: none;
+    }
+
+    .ant-modal-body {
+      padding: 20px 50px 38px 50px;
+    }
+
+    .app-btn {
+      border: 2px solid #4A54FF;
+
+      &:last-child {
+        margin-left: 16px;
+      }
+
+      &:hover {
+        border: 2px solid #7C83FF;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .modal-footer-actions {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 500px) {
+      .modal-footer-actions {
+        flex-direction: column-reverse;
+        justify-content: center;
+
+        .app-btn {
+          width: 100%;
+          margin: 0;
+        }
+
+        .primary-btn-outline {
+          margin-top: 10px;
+          border: none;
+          color: #A9AAAB;
+          box-shadow: none;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.userTooltip {
+  :global {
+    .ant-tooltip-arrow {
+      &:before {
+        display: none;
+      }
+    }
+
+    .ant-tooltip-inner {
+      font-size: 14px;
+      line-height: 19px;
+      color: #FFFFFF;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-weight: 400;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      background-color: rgba(0, 0, 0, .81);
+    }
+  }
+}

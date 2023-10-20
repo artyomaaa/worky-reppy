@@ -1,0 +1,154 @@
+@import '~themes/abstracts/default.less';
+
+@titleMarginBottom: 40px;
+
+.jobInfoBlock {
+  :global {
+    .ant-calendar {
+      width: 300px;
+    }
+
+    .ant-select-auto-complete.ant-select .ant-select-selection--single {
+      height: 100%;
+    }
+
+    .select-autoComplete .ant-select-selection ul .ant-input.ant-select-search__field {
+      padding: 13px 20px;
+      border-radius: 12px;
+    }
+
+    .ant-select-selection--multiple .ant-select-selection__placeholder {
+      margin-left: 10px;
+    }
+
+    .ant-calendar-picker-input {
+      margin-top: 3px;
+    }
+
+    .ant-checkbox-wrapper {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.03em;
+      color: #000000;
+      margin-bottom: 30px;
+    }
+
+    .ant-checkbox-inner {
+      border: 1px solid #D3D1D1;
+      box-sizing: border-box;
+      border-radius: 6px;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: #7C83FF;
+      border-color: #7C83FF;
+    }
+
+    .ant-checkbox + span {
+      padding-left: 16px;
+    }
+
+    textarea.ant-input {
+      border-radius: 12px;
+    }
+
+    @media(max-width: 768px) {
+      .ant-row-flex-end {
+        justify-content: flex-start;
+        padding: 0 8px;
+      }
+    }
+  }
+
+  .workExp {
+    :global {
+      .ant-select-selection__placeholder {
+        margin-top: -3px !important;
+        margin-left: 20px !important;
+      }
+    }
+  }
+}
+
+.dFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textStyle {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+.content-title:extend(.textStyle) {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: @titleMarginBottom;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 40px 20px 40px;
+  @media(max-width: 1465px) {
+    padding: 0 20px 20px 20px;
+  }
+}
+
+.form-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  h3 {
+    margin-bottom: 0;
+    margin-left: 22px;
+    font-weight: bold;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+    color: #000000;
+  }
+}
+
+.ml156 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: #F8F8FB;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  svg {
+    g {
+      path {
+        fill: @inactive;
+      }
+    }
+  }
+}
+
+:global {
+  .select-text-lowercase {
+    .ant-select-selection__choice__content {
+      text-transform: unset;
+    }
+  }
+}
+
+:global {
+  .job-info-skills {
+    @media (min-width: 768px) {
+      .ant-select-selection__choice {
+        max-width: 250px!important;
+      }
+    }
+  }
+}
+

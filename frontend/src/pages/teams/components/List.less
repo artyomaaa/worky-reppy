@@ -1,0 +1,27 @@
+.table {
+  :global {
+    .ant-table td {
+      white-space: nowrap;
+    }
+  }
+}
+
+.team-list__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: stretch;
+  @media(max-width: 767px) {
+    padding: 0;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+
+.team-card {
+  margin: 0 0 40px;
+  @media(max-width: 767px){
+    width: 100%;
+    margin: 0 0 20px;
+  }
+}

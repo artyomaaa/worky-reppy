@@ -1,0 +1,83 @@
+.pie-chart-content {
+  margin-top: 46px;
+  padding: 12px 40px 32px 40px;
+  border-left: 1.5px solid #D9D9D9;
+  @media(max-width: 1200px) {
+    padding-right: 0;
+  }
+  @media(max-width: 991px) {
+    border-left: unset;
+    padding-left: 0;
+  }
+
+  h3 {
+    font-weight: bold;
+    line-height: 26px;
+    letter-spacing: 0.03em;
+  }
+
+  .pie-chart-title {
+    color: #000;
+    font-size: 20px;
+  }
+
+  .statistics-radius-total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+    h3 {
+      color: #B3B3B3;
+    }
+
+    p {
+      color: #000;
+      font-size: 30px;
+      line-height: 26px;
+    }
+  }
+
+  .projects {
+    max-height: 245px;
+    overflow-y: auto;
+    box-sizing: content-box;
+    padding-top: 26px;
+
+    li {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-bottom: 2px solid #F6F4FD;
+      box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.15);
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 19px;
+
+      .project-title,
+      .project-time {
+        color: #000;
+        white-space: nowrap;
+
+        .radius {
+          width: 12px;
+          height: 12px;
+          margin-right: 9px;
+          border-radius: 50%;
+          display: inline-block;
+        }
+      }
+
+      .project-time {
+        .project-percent {
+          color: #B3B3B3;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

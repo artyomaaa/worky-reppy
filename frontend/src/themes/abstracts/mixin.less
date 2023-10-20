@@ -1,0 +1,186 @@
+.text-style(@size: 16px, @weight: 400, @lineHeight: 20px, @color: #000000, @position: lrft) {
+  font-size: @size;
+  font-weight: @weight;
+  line-height: @lineHeight;
+  text-align: @position;
+  color: @color;
+}
+
+.flex-style (@alignItems: center, @justifyContent: center, @direction: row) {
+  align-items: @alignItems;
+  justify-content: @justifyContent;
+  flex-direction: @direction;
+}
+
+.text-gradient {
+  background-image: -webkit-gradient(
+    linear,
+    37.219838% 34.532506%,
+    36.425669% 93.178216%,
+    from(#29cdff),
+    to(#0a60ff),
+    color-stop(0.37, #148eff)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/**
+ * BOX-SHADOW
+ *
+ * Example usage: .box-shadow(0px 6px 15px 4px rgba(0, 0, 0, 0.15));
+ */
+.box-shadow ( @arg ) {
+  -moz-box-shadow: @arg;
+  -webkit-box-shadow: @arg;
+  box-shadow: @arg;
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @s: 0, @color: #000) {
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+
+/*The Buttons should have some default styles via mixin*/
+.button (
+  @pr: 0px, @pl: 0px,
+  @height: 42px,
+  @border: 1px solid , @fSize, @color, @radius) {
+  font-size: @fSize;
+  font-family: @font-family-primary;
+  padding-left: @pl;
+  padding-right: @pr;
+  color: @color;
+  border: @border;
+  border-radius: @radius;
+  height: @height;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  min-width: 125px;
+  cursor: pointer;
+  transition: all ease .3s;
+  @media(max-width: 370px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  @media(max-width: 350px) {
+    min-width: 110px;
+  }
+}
+
+
+//Global shadows
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow;
+  -moz-box-shadow: @shadow;
+  box-shadow: @shadow;
+}
+
+//Ellipsis
+//For long text
+.ellipsis (@maxWidth) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: @maxWidth;
+}
+
+/*MIXINS FOR MEDIA QUERIES*/
+
+// Small devices
+.max-xs-s(@content) {
+  @media screen and (max-width: @screen-max-xs-s) {
+    @content();
+  }
+}
+.max-xs (@content) {
+  @media screen and (max-width: @screen-max-xs) {
+    @content();
+  }
+}
+.max-sm (@content) {
+  @media screen and (max-width: @screen-max-sm) {
+    @content();
+  }
+}
+.min-xs-max-sm (@content) {
+  @media screen and (min-width: @screen-min-xs) and (max-width: @screen-max-sm) {
+    @content();
+  }
+}
+
+// Medium devices
+.min-xs-s-max-xs (@content) {
+  @media screen and (min-width: @screen-min-xs-s) and (max-width: @screen-max-xs) {
+    @content();
+  }
+}
+.min-sm (@content) {
+  @media screen and (min-width: @screen-min-sm) {
+    @content();
+  }
+}
+.max-md (@content) {
+  @media screen and (max-width: @screen-max-md) {
+    @content();
+  }
+}
+.min-sm-max-md (@content) {
+  @media screen and (min-width: @screen-min-sm) and (max-width: @screen-max-md) {
+    @content();
+  }
+}
+
+// Large devices
+.min-md (@content) {
+  @media screen and (min-width: @screen-min-md) {
+    @content();
+  }
+}
+.max-lg (@content) {
+  @media screen and (max-width: @screen-max-lg) {
+    @content();
+  }
+}
+.min-md-max-lg (@content) {
+  @media screen and (min-width: @screen-min-md) and (max-width: @screen-max-lg) {
+    @content();
+  }
+}
+
+
+// Extra large devices
+.min-lg (@content) {
+  @media screen and (min-width: @screen-min-lg) {
+    @content();
+  }
+}
+.max-xl (@content) {
+  @media screen and (max-width: @screen-max-xl) {
+    @content();
+  }
+}
+.min-lg-max-xl (@content) {
+  @media screen and (min-width: @screen-min-lg) and (max-width: @screen-max-xl) {
+    @content();
+  }
+}
+.min-xl (@content) {
+  @media screen and (min-width: @screen-min-xl) {
+    @content();
+  }
+}
+.max-xl-five (@content) {
+  @media screen and (max-width: @screen-max-xl-five) {
+    @content();
+  }
+}

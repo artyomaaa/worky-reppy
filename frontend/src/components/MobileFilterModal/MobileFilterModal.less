@@ -1,0 +1,297 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/abstracts/mixin.less';
+
+.app-datepicker {
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: 86vw;
+
+  :global {
+    .ant-calendar {
+      padding: 0;
+    }
+
+    .ant-calendar-date-panel {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ant-calendar-header {
+      padding: 7px 20px 0 20px;
+    }
+
+    .ant-calendar-input-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .ant-calendar-date-input-wrap {
+      display: flex;
+      flex-basis: 20%;
+      margin: 0
+    }
+
+    .ant-calendar-body {
+      padding: 12px 20px;
+      border-top: none;
+    }
+    .ant-calendar-range-right {
+      width: 100%
+    }
+    .ant-calendar-range-left {
+      width: 100%;
+      border-right: 0.3px solid rgba(222, 222, 222, 0.57);
+    }
+    .ant-calendar-input {
+      font-family: 'Red Hat Display', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #000000;
+      opacity: 53%;
+      text-align: left;
+    }
+  }
+}
+
+.mobile-filter-modal {
+  top: 0;
+  position: fixed;
+  height: 100%;
+  background: #FFFFFF;
+  box-shadow: none;
+  z-index: 1000;
+  -ms-flex: none !important;
+  flex: none !important;
+  max-width: none !important;
+  width: 100% !important;
+  margin-top: -0.1px;
+
+  .head__calendar-icon {
+    position: absolute;
+    left: 0;
+    margin-left: 19px;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .user-calendar-input {
+    width: 100%;
+
+    :global {
+      .ant-input {
+        position: relative;
+        padding: 0 40px;
+      }
+
+      .ant-calendar-range-picker-input {
+        text-align: center;
+        font-weight: 500;
+        width: 30%;
+      }
+
+      .ant-calendar-range-picker-separator {
+        display: none;
+      }
+
+      .ant-calendar-picker-clear {
+        display: none;
+        background: #F4F8FB;
+      }
+
+    }
+  }
+
+  .user-radio-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+    .filter-button-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 10px;
+
+      :global {
+        .ant-btn {
+          background: #FFFFFF;
+          border: 1px solid @primary-color;
+          box-sizing: border-box;
+          color: @primary-color;
+          font-weight: bold;
+          font-style: normal;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+          width: 50%;
+          height: 30px;
+          margin-top: 20px;
+
+          &:hover {
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+            box-shadow: 0 0 3px #353FDF;
+          }
+        }
+      }
+    }
+
+    .label-head__text {
+      align-items: flex-start;
+      font-family: Red Hat Display;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 19px;
+      letter-spacing: 0.03em;
+      text-align: left;
+    }
+
+    &__label {
+      margin-right: 10px;
+      font-family: Red Hat Display;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.03em;
+      color: @defaultColor;
+    }
+
+    :global {
+      .ant-radio-group {
+        height: 30px;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        > label {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          box-shadow: none !important;
+
+          > span {
+            transition: color .3s linear;
+          }
+
+          &:hover {
+            > span {
+              color: @primary-color !important;
+            }
+          }
+        }
+
+        .ant-radio-button-wrapper {
+          margin-top: 20px;
+          background-color: #FBFBFB;
+          border: 1px solid #D3D1D1;
+          padding: 0 24px;
+          width: 50%;
+          &:last-child {
+            width: 50%;
+          }
+
+          span:last-child {
+            color: @defaultColor;
+            font-family: Red Hat Display;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.05em;
+          }
+
+          &:first-child {
+            border-radius: 5px 0 0 5px;
+          }
+
+          &:last-child {
+            border-radius: 0px 5px 5px 0;
+          }
+        }
+
+        .ant-radio-button-wrapper-checked {
+          background: #FFFFFF;
+          border: 1px solid @primary-color;
+          box-sizing: border-box;
+
+          span:last-child {
+            font-family: Red Hat Display;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.05em;
+            color: @primary-color;
+          }
+        }
+
+        .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+          box-shadow: none !important;
+        }
+      }
+    }
+  }
+
+  .footer-action-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .close-icon-container {
+  }
+
+  :global {
+    .ant-modal-content {
+      @media(max-width: 767px) {
+        height: 100%;
+        max-height: 100vh;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        max-height: 100vh;
+      }
+
+      .ant-modal-header {
+        padding: 40px 60px;
+        border-bottom: none;
+      }
+
+      .ant-modal-body {
+        padding: 0 20px !important;
+      }
+
+      .ant-modal-close-x {
+        position: fixed;
+        left: 24px;
+        display: flex;
+        justify-content: flex-start;
+
+        svg {
+          width: 16px;
+          height: 16px;
+
+          path {
+            fill: #000000;
+          }
+        }
+      }
+
+      .ant-modal-body {
+        padding: 19px;
+      }
+      .ant-modal-footer{
+        margin-top: auto;
+        padding: 20px 20px;
+        border-top: none;
+      }
+    }
+  }
+}
+

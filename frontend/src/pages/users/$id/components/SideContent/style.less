@@ -1,0 +1,110 @@
+@import '~themes/abstracts/mixin.less';
+
+@headerHeight: 79px;
+@contentHeight: 808px;
+
+.textStyle {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+.user-side-main-content {
+  height: 100%;
+  background: #FFF;
+  border-radius: 0 12px 12px 0;
+  @media (max-width: 767px) {
+    border-radius: 12px;
+  }
+
+  .user-content-switch {
+    padding: 30px 50px;
+    position: relative;
+    @media (max-width: 1465px) {
+      padding: 20px;
+    }
+
+    &.overflow-unset {
+      overflow: unset;
+      padding: 0;
+    }
+  }
+
+  :global {
+    .ant-calendar {
+      @media(max-width: 1240px) {
+        width: 300px;
+      }
+      @media(max-width: 500px) {
+        width: 280px;
+      }
+    }
+
+    .custom-radio-group .ant-radio-button-wrapper {
+      height: 46px;
+      padding: 14px 20px;
+      line-height: 1!important;
+      &-checked {
+        color: #000000!important;
+      }
+      font-weight: 500;
+      font-size: 14px;
+      &:first-child {
+        border-radius: 12px 0 0 12px;
+      }
+
+      &:last-child {
+        border-radius: 0 12px 12px 0;
+      }
+      @media (max-width: 875px) {
+        padding: 14px;
+      }
+      @media (max-width: 385px) {
+        padding: 10px;
+        height: auto;
+      }
+      @media (max-width: 354px) {
+        padding: 8px;
+      }
+    }
+    .ant-select-arrow {
+      right: 20px;
+    }
+    .ant-input {
+      padding: 4px 20px;
+    }
+  }
+}
+
+:global {
+  .fade-content-user-enter {
+    opacity: 0;
+  }
+
+  .fade-content-user-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+
+  .fade-content-user-exit {
+    opacity: 1;
+  }
+
+  .fade-content-user-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
+
+  .ant-popover-inner-content {
+    min-width: 218px !important;
+  }
+
+  .long-form {
+    position: relative;
+    padding: 40px;
+    @media (max-width: 1465px) {
+      padding: 20px;
+    }
+  }
+}

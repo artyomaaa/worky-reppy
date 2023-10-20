@@ -1,0 +1,49 @@
+.select_content  {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @media(max-width: 767px) {
+    margin-top: 12px;
+    justify-content: flex-start;
+  }
+
+  .select_projects {
+    width: 280px;
+
+    @media(max-width: 767px) {
+      width: 100%;
+    }
+
+    :global {
+      .ant-select-selection {
+        height: auto;
+        min-height: 42px;
+        .ant-select-selection__rendered {
+          padding: 6px 0;
+        }
+      }
+    }
+  }
+}
+
+.user-project-dropdown {
+  :global {
+    .ant-select-dropdown-menu {
+      .ant-select-dropdown-menu-item {
+        &:before {
+          content: '';
+          background-color: var(--backgroundColor);
+          width: 12px;
+          height: 12px;
+          margin-right: 8px;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+

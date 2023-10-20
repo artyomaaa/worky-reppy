@@ -1,0 +1,35 @@
+before_script:
+  - echo "Before script"
+  - cd /var/www/worky-reppy-dev #your project path
+building:
+  stage: build
+  only:
+    refs:
+      - dev
+  tags:
+    - dev
+  script:
+    - git reset --hard
+    - git pull origin dev
+    - composer install
+    - php artisan key:generate
+    - php artisan migrate
+    - php artisan optimize:clear
+#    - php artisan storage:link
+    #    - rm package-lock.json
+    - sudo chown -R deployer:deployer /var/www/worky-reppy-dev/
+    - sudo chmod -R g+rwX /var/www/worky-reppy-dev
+    - sudo chgrp -R apache storage bootstrap/cache
+    - sudo chmod -R ug+rwx storage bootstrap/cache
+    - cd /var/www/worky-reppy-dev/frontend && npm install
+deploying:
+  stage: deploy
+  only:
+    refs:
+      - dev
+  tags:
+    - dev
+  script:
+    - echo $USER
+    - cd /var/www/worky-reppy-dev/frontend && npm run build
+    - echo "Deployed"

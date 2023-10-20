@@ -1,0 +1,134 @@
+@import '~themes/abstracts/default.less';
+@import '~themes/elements/radioGroup.less';
+
+@titleMarginBottom: 40px;
+
+.form-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  h3 {
+    margin-bottom: 0;
+    margin-left: 22px;
+    font-weight: bold;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+    color: #000000;
+  }
+}
+
+.textStyle {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+hr {
+  margin-bottom: 30px;
+  background-color: #e8e8e875;
+  height: 1px;
+  width: 100%;
+  border: none;
+}
+
+.validationSection {
+  background-color: #f25650 !important;
+  color: white !important;
+}
+
+.content-title:extend(.textStyle) {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: @titleMarginBottom;
+}
+
+.add-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.delete-icon {
+  display: flex;
+  justify-content: flex-end;
+
+  svg {
+    cursor: pointer;
+
+    path {
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      path {
+        fill: @inactive;
+      }
+    }
+  }
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 4px rgba(255, 255, 255, 0.15);
+}
+
+.genderUpperCase::first-letter {
+  text-transform: uppercase;
+}
+
+.hiddenTab {
+  display: none;
+}
+
+.input-responsive {
+  @media (max-width: 1465px) {
+    width: 50%;
+  }
+  @media (max-width: 875px) {
+    width: 100%;
+  }
+}
+
+.input-responsive-birth-and-phone {
+  @media (max-width: 1199px) {
+    width: 100%;
+  }
+}
+
+.input-responsive-zone {
+  @media (max-width: 1465px) {
+    width: 135px;
+  }
+  @media (max-width: 767px) {
+    width: 50%;
+  }
+}
+
+.input-responsive-zone-full-width {
+  @media (max-width: 875px) {
+    width: 100%;
+  }
+}
+
+.input-responsive-zone-mg0 {
+  @media (max-width: 992px) {
+    margin-left: 0px!important;
+  }
+}
+
+.input-responsive-zone-pd0 {
+  @media (max-width: 992px) {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+  }
+}

@@ -1,0 +1,39 @@
+@import '~themes/abstracts/default.less';
+
+
+
+:global {
+  .custom-calendar {
+    .ant-fullcalendar-table {
+      thead {
+        display: none;
+      }
+    }
+    .ant-fullcalendar-calendar-body {
+      padding: 0;
+    }
+    .ant-fullcalendar-selected-day .ant-fullcalendar-value, .ant-fullcalendar-month-panel-selected-cell .ant-fullcalendar-value {
+      background: #F6F4FD;
+      color: #353FDF;
+    }
+    .ant-fullcalendar-fullscreen .ant-fullcalendar-month:hover, .ant-fullcalendar-fullscreen .ant-fullcalendar-date:hover {
+      background: #F6F4FD;
+    }
+    .ant-fullcalendar-fullscreen .ant-fullcalendar-month, .ant-fullcalendar-fullscreen .ant-fullcalendar-date {
+      height: auto;
+    }
+    .ant-fullcalendar-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #353FDF;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      &:hover {
+        background: #F6F4FD;
+      }
+    }
+  }
+}
+

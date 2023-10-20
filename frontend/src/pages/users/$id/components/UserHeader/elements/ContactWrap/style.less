@@ -1,0 +1,295 @@
+@import '~themes/abstracts/default.less';
+
+.textStyle {
+  font-family: Red Hat Display;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 19px;
+  letter-spacing: 0.03em;
+}
+
+.contact-information-wrapper {
+  width: 100%;
+  padding: 0 3.5vw;
+  @media (max-width: 1265px) {
+    padding: 0 20px;
+  }
+
+  > h3:extend(.textStyle) {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .contact-information-wrapper_sub {
+    position: relative;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    @media (max-width: 1265px) {
+      flex-direction: column;
+      align-items: baseline;
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      margin-bottom: 14px;
+    }
+    :global {
+      .ant-legacy-form-horizontal {
+        &.header-form {
+          display: flex;
+          align-items: center;
+          @media (max-width: 991px) {
+            flex-direction: column;
+            align-items: baseline;
+          }
+          .no-icons-form-filed {
+            margin: 0;
+          }
+          button {
+            margin-left: 7px;
+            padding: 5px;
+          }
+          .header-input-width {
+            width: 250px;
+          }
+        }
+      }
+    }
+
+    .social-actions-text-box {
+      display: flex;
+
+      .social-actions-text {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+        border: none;
+        box-shadow: none;
+        color: @defaultColor;
+        @media (max-width: 422px) {
+          padding: 0 6px;
+        }
+
+        &:first-child {
+          color: @button-color;
+          margin: 0 5px;
+          padding: 0;
+        }
+
+        &:hover {
+          color: @purple-color;
+        }
+      }
+    }
+
+    .contact-information-user-id {
+      margin-left: auto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.03em;
+      @media (max-width: 1265px) {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  .sub_title:extend(.textStyle) {
+    width: 21%;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: @defaultColor;
+    font-weight: 500;
+    min-width: 225px;
+    @media (max-width: 767px) {
+      margin-bottom: 14px;
+    }
+  }
+
+  .sub_val:extend(.textStyle) {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .dFlex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 120px;
+    @media (max-width: 1265px) {
+      position: absolute;
+      right: 0;
+    }
+    @media (max-width: 767px) {
+      justify-content: flex-end;
+    }
+
+    .ml156 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      background: none;
+      border-radius: 10px;
+      cursor: default;
+      position: relative;
+      &:first-of-type {
+        svg {
+          cursor: default;
+          font-size: 18px;
+          path {
+            fill: #6FCF97;
+          }
+          g {
+            path {
+              fill: #6FCF97;
+            }
+          }
+        }
+        &:hover {
+          background: #F8F8FB;
+          .hover-container {
+            display: block;
+          }
+          svg {
+            g {
+              path {
+                fill: @inactive;
+              }
+            }
+          }
+        }
+      }
+      &:last-of-type {
+        svg {
+          path {
+            fill: #B6B6B6;
+          }
+          g {
+            path {
+              fill: #B6B6B6;
+            }
+          }
+        }
+        &:hover {
+          background: #F8F8FB;
+          svg {
+            path {
+              fill: #353FDF;
+            }
+            g {
+              path {
+                fill: @inactive;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .danger-svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      background: none;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      &:first-of-type {
+        svg {
+          font-size: 18px;
+          path {
+            fill: @inactive;
+          }
+          g {
+            path {
+              fill: @inactive;
+            }
+          }
+        }
+        &:hover {
+          background: #F8F8FB;
+          .hover-container {
+            display: block;
+          }
+          svg {
+            g {
+              path {
+                fill: @inactive;
+              }
+            }
+          }
+        }
+      }
+      &:last-of-type {
+        svg {
+          path {
+            fill: #B6B6B6;
+          }
+          g {
+            path {
+              fill: #B6B6B6;
+            }
+          }
+        }
+        &:hover {
+          background: #F8F8FB;
+          svg {
+            path {
+              fill: #353FDF;
+            }
+            g {
+              path {
+                fill: @inactive;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hover-container {
+      display: none;
+      position: absolute;
+      bottom: 40px;
+      color: black;
+      .hover-valid {
+        background-color: rgba(111, 207, 151, 0.43);
+        max-width: 200px;
+        min-width: 120px;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+      }
+      .hover-invalid {
+        background-color: rgba(255, 0, 0, 0.43);
+        max-width: 200px;
+        min-width: 120px;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+      }
+    }
+
+    :global {
+      .ant-legacy-form-item {
+        margin-bottom: 20px !important;
+      }
+    }
+  }
+}

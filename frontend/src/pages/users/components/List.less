@@ -1,0 +1,767 @@
+@import '~themes/abstracts/mixin.less';
+
+.table {
+  margin-bottom: 20px;
+
+  tr {
+    &:hover {
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    th {
+      border-radius: 0 !important;
+      padding: 9px 0 !important;
+      text-align: start !important;
+      background-color: @secondary-color !important;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      :global {
+        .ant-table-column-sorter {
+          display: none;
+        }
+      }
+
+      &:first-child {
+        padding: 11px 20px !important;
+      }
+    }
+
+    td {
+      padding: 20px 0;
+      text-align: start !important;
+      font-family: Red Hat Display;
+      font-weight: 500;
+      font-size: 14px;
+      color: #000;
+    }
+
+    &:hover td {
+      background-color: #FFFFFF !important;
+    }
+  }
+
+  :global {
+    .ant-pagination {
+      @media (min-width: 767px) {
+        margin-top: 0 !important;
+      }
+    }
+  }
+
+  :global {
+    table {
+      margin-bottom: 16px;
+    }
+
+    .ant-table td {
+      white-space: nowrap;
+      min-width: 170px;
+
+      &:nth-child(2) {
+        min-width: 130px;
+      }
+
+      &:nth-child(3) {
+        min-width: 130px;
+      }
+
+      &:nth-child(5) {
+        min-width: 130px;
+      }
+
+      &:last-child {
+        min-width: 70px;
+      }
+    }
+
+    .ant-table-column-has-sorters {
+      &:first-child {
+        width: 25%;
+      }
+    }
+
+    .ant-table-header-column {
+      display: flex !important;
+
+      .ant-table-column-sorters {
+        display: flex !important;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        &:before {
+          display: none;
+        }
+
+        > span {
+          font-style: normal;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+          color: #FFFFFF;
+        }
+      }
+    }
+
+    .ant-table-thead > tr > th .ant-table-column-sorter .ant-table-column-sorter-inner-full .ant-table-column-sorter-down {
+      margin-top: 0;
+    }
+
+    .ant-table-thead > tr > th.ant-table-column-has-actions.ant-table-column-has-sorters:hover {
+      background: #3F0F3F;
+    }
+  }
+}
+
+.userList {
+  padding: 2.3rem 2.5rem;
+
+  :global {
+    .ant-calendar-picker-input {
+      width: 248px;
+      height: 42px;
+      background: #fbfbfb;
+      border: 1px solid #d3d1d1;
+      border-radius: 5px;
+
+      input {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.03em;
+        color: #b3b3b3;
+        text-transform: capitalize;
+        padding-right: 10px;
+      }
+    }
+
+    .anticon-calendar {
+      background: url('../../../../public/img/calendar-icon.png') right center no-repeat;
+      right: 12px;
+      top: 17px;
+      width: 20px;
+      height: 20px;
+
+      svg {
+        opacity: 0;
+      }
+    }
+
+    .ant-calendar-picker-clear {
+      width: 20px;
+      height: 20px;
+      right: 12px;
+      top: 17px;
+      background: #fbfbfb;
+      font-size: 20px;
+    }
+
+    .ant-calendar-range-picker-separator {
+      vertical-align: baseline;
+      opacity: 0;
+    }
+  }
+
+  @media only screen and (max-width: 1440px) and (min-width: 1201px) {
+    .selectUser {
+      div {
+        width: 320px;
+        margin-right: 20px;
+      }
+    }
+  }
+  @media only screen and (max-width: 1400px) {
+    flex-direction: column;
+    .flexRow {
+      &:first-child {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+
+      &:last-child {
+        width: 100%;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+    }
+
+    .selectUser {
+      div {
+        width: 320px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.userEditDelete {
+  display: inline-block;
+
+  span {
+    cursor: pointer;
+    margin-left: 15px;
+  }
+
+  .userEdit {
+    width: 20px;
+    height: 21px;
+  }
+}
+
+.createdWork {
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: 0.05em;
+  color: rgba(63, 15, 63, 0.5);
+  margin-bottom: 0;
+  margin-top: 6px;
+}
+
+.userName {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  color: #000;
+}
+
+.userNameBlock {
+  .ellipsis(190px);
+  @media (max-width: 767px) {
+    .ellipsis(100px);
+  }
+}
+
+.userInform {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 20px;
+
+  .avatarSect {
+    margin-right: 22px;
+
+    :global {
+      .ant-avatar-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .greenBordered {
+        border: 2px solid #49C39E;
+      }
+
+      .redBordered {
+        border: 2px solid #DB4D4D;
+      }
+    }
+  }
+}
+
+.posSect {
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  color: #000;
+  width: 8rem;
+  .ellipsis(220px);
+  @media (max-width: 767px) {
+    .ellipsis(100px);
+  }
+}
+
+.role-badge {
+  padding: 5px 28px;
+  background: #F7F7F7;
+  border-radius: 5px;
+  color: @primary-color;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.permissionCount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 45px;
+}
+
+.action-icons {
+  :global {
+    .icon-with-bg {
+      width: 35px;
+      height: 35px;
+      margin: 5px;
+      background: transparent;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #F8F8FB;
+
+        svg {
+          g {
+            path {
+              fill: @inactive;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  svg {
+    g {
+      path {
+        fill: #B6B6B6;
+      }
+    }
+  }
+}
+
+.exportBtn {
+  width: 159px;
+  min-width: 159px;
+  height: 42px;
+  background: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: #3F0F3F;
+  border: 1px solid #3F0F3F;
+  border-radius: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+
+  img {
+    margin-right: 12px;
+  }
+}
+
+.addUserBtn {
+  width: 159px;
+  min-width: 159px;
+  height: 42px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  color: #fff;
+  border: 1px solid #3F0F3F;
+  border-radius: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    margin-right: 18px;
+  }
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.selectUser {
+  :global {
+    .ant-select-selection__placeholder, .ant-select-search__field__placeholder {
+      width: 320px;
+      max-width: 320px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+      color: #b3b3b3;
+    }
+
+    .ant-select-arrow {
+      right: 18px;
+    }
+
+    .ant-select-selection--single .ant-select-selection__rendered {
+      margin: 0;
+    }
+  }
+
+  & > div {
+    width: 360px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    color: #b3b3b3;
+    display: flex !important;
+    align-items: center;
+    border: 1px solid #d3d1d1;
+    border-radius: 5px;
+    padding: 0 20px;
+    margin-right: 2.6rem;
+  }
+
+  span {
+    svg {
+      color: #3F0F3F;
+    }
+  }
+}
+
+.userTop {
+  margin: 15px 48px;
+}
+
+.exportDropdown {
+  :global {
+    .ant-dropdown-menu {
+      padding: 0;
+
+      .ant-dropdown-menu-item {
+        padding: 8px 12px;
+      }
+    }
+
+    .ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+.tableTopUser {
+  padding: 25px 48px 50px 60px;
+}
+
+.usersDataPicker {
+  top: 90px !important;
+
+  :global {
+    .ant-calendar {
+      width: 598px;
+      background: #fbfbfb;
+      border: 0.5px solid rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+      border-radius: 3px;
+      padding: 22px 40px 28px;
+
+      .ant-calendar-range-left {
+        .ant-calendar-body {
+          padding-left: 0;
+        }
+      }
+
+      .ant-calendar-range-right {
+        .ant-calendar-body {
+          padding-right: 0;
+        }
+
+        .ant-calendar-date-input-wrap {
+          margin-left: 0;
+
+          .ant-calendar-input {
+            padding-left: 15px;
+          }
+        }
+      }
+
+      .ant-calendar-range-middle {
+        display: none;
+      }
+    }
+
+    .ant-calendar-disabled-cell {
+      .ant-calendar-date {
+        background: #fbfbfb;
+      }
+    }
+
+    .ant-calendar-input {
+      background: #fbfbfb;
+      text-align: center;
+      color: #000;
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 17px;
+      letter-spacing: 0.075em;
+
+      &::placeholder {
+        color: #3F0F3F;
+        opacity: 1;
+        font-size: 8px;
+        text-align: left;
+      }
+
+      &:-ms-input-placeholder {
+        color: #3F0F3F;
+        opacity: 1;
+        font-size: 8px;
+        text-align: left;
+      }
+
+      &::-ms-input-placeholder {
+        color: #3F0F3F;
+        opacity: 1;
+        font-size: 8px;
+        text-align: left;
+      }
+    }
+
+    .ant-calendar-input-wrap {
+      height: unset;
+      padding: 0;
+      border-bottom: none;
+    }
+
+    .ant-calendar-my-select {
+      a {
+        font-weight: 900;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 0.075em;
+        color: #3F0F3F;
+      }
+    }
+
+    .ant-calendar-header {
+      border: none;
+
+      .ant-calendar-prev-month-btn::before,
+      .ant-calendar-prev-month-btn::after,
+      .ant-calendar-prev-year-btn::before,
+      .ant-calendar-prev-year-btn::after,
+      .ant-calendar-next-year-btn::before,
+      .ant-calendar-next-year-btn::after,
+      .ant-calendar-next-month-btn::after,
+      .ant-calendar-next-month-btn::before {
+        border-color: rgba(63, 15, 63, 0.5);
+      }
+    }
+
+    .ant-calendar-body {
+      padding: 14px 15px 18px;
+      border-top: none;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        background: rgba(222, 222, 222, 0.57);
+        height: 1px;
+        width: 94%;
+      }
+    }
+
+    .ant-calendar-table {
+      .ant-calendar-column-header {
+        span {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 0.05em;
+          color: rgba(0, 0, 0, 0.3);
+        }
+      }
+
+      .ant-calendar-tbody {
+        tr {
+          td:nth-child(6),
+          td:last-child {
+            div {
+              color: #DB4D4D;
+            }
+          }
+        }
+
+        td {
+          font-weight: bold;
+          font-size: 15px;
+          line-height: 20px;
+          letter-spacing: 0.05em;
+        }
+
+        .ant-calendar-last-month-cell,
+        .ant-calendar-next-month-btn-day {
+          .ant-calendar-date {
+            color: rgba(0, 0, 0, 0.5);
+          }
+        }
+
+        .ant-calendar-selected-day .ant-calendar-date {
+          background: #3F0F3F;
+          border: 0;
+          border-radius: 4px;
+          color: #fff;
+        }
+
+        .ant-calendar-disabled-cell .ant-calendar-date {
+          border-radius: 4px;
+        }
+
+        .ant-calendar-date {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 29px;
+          height: 29px;
+          line-height: 29px;
+          color: #000;
+
+          &:hover {
+            background: rgba(63, 15, 63, 0.14);
+          }
+        }
+      }
+
+      .ant-calendar-today .ant-calendar-date {
+        color: #fff;
+        font-weight: bold;
+        border-color: #3F0F3F;
+        background: #3F0F3F;
+        border-radius: 4px;
+      }
+
+      .ant-calendar-selected-date {
+        .ant-calendar-date {
+          color: #fff
+        }
+      }
+
+      .ant-calendar-in-range-cell::before {
+        background: rgba(63, 15, 63, 0.14);
+      }
+    }
+
+    .ant-calendar-footer {
+      border-top: none;
+      padding: 0;
+    }
+
+    .ant-calendar-footer-extra {
+      float: unset;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0 10px;
+
+        & > div {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 18px;
+        }
+      }
+
+      button {
+        width: 115px;
+        background: rgba(63, 15, 63, 0.14);
+        border: 0.5px solid #3F0F3F;
+        border-radius: 2px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 17px;
+        letter-spacing: 0.075em;
+        color: #3F0F3F;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 5px 10px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+:global {
+  .ant-popover-inner {
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(74, 84, 255, 0.1);
+
+    .ant-popover-message {
+      padding: 4px 0 26px;
+    }
+
+    .ant-popover-message > .anticon {
+      display: none;
+    }
+
+    .ant-popover-message-title {
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      color: @text-color;
+      padding: 0;
+    }
+
+    .ant-popover-buttons {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row-reverse;
+
+      .ant-btn-sm {
+        border: none;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+        color: rgba(0, 0, 0, 0.26);
+        box-shadow: none;
+      }
+
+      .ant-btn-primary {
+        font-weight: 700;
+        background-color: transparent;
+        color: @button-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 1176px) {
+  :global {
+    .ant-pagination {
+      padding-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 766px) {
+  :global {
+    .ant-pagination {
+      padding-top: 0;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  :global {
+    .ant-pagination {
+      .ant-pagination-item {
+        min-width: 26px;
+      }
+
+      .ant-pagination-item, .ant-pagination-prev, .ant-pagination-next {
+        margin: 0;
+      }
+
+      .ant-pagination-prev, .ant-pagination-next {
+        width: 25px;
+        min-width: 5px;
+      }
+    }
+  }
+}

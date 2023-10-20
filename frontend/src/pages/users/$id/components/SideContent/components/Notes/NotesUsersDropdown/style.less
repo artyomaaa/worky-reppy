@@ -1,0 +1,406 @@
+@import '~themes/abstracts/default.less';
+
+.dropdown {
+  position: absolute;
+  width: 368px;
+  height: 501px;
+  background-color: #fff;
+  border: .3px solid rgba(120, 112, 112, 0.25);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  bottom: 50px;
+  padding: 20px;
+  z-index: 3;
+  right: 0;
+  @media(max-width: 1350px) {
+    max-width: 330px;
+  }
+  @media(max-width: 1180px) {
+    right: inherit;
+  }
+  @media(max-width: 801px) {
+    max-width: 300px;
+  }
+  @media(max-width: 380px) {
+    left: -30px;
+    max-width: 285px;
+  }
+
+  .search-field {
+    position: relative;
+    padding: 0 14px;
+
+    input {
+      width: 100%;
+      max-width: 100%;
+      font-size: 14px;
+      height: 40px !important;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      padding: 10px 20px 10px 55px;
+      color: #000000;
+
+      &::placeholder {
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 21px;
+      height: 21px;
+      display: block;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 13px;
+      left: 35px;
+      cursor: default;
+      background-image: url("data:image/svg+xml,%0A%3Csvg width='15' height='15' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.9146 13.0897L9.84766 9.0228C10.619 8.0705 11.0834 6.85983 11.0834 5.54169C11.0834 2.48602 8.59733 0 5.54166 0C2.48599 0 0 2.48602 0 5.54169C0 8.59736 2.48602 11.0834 5.54169 11.0834C6.85983 11.0834 8.0705 10.619 9.0228 9.84768L13.0897 13.9146C13.2036 14.0285 13.3883 14.0285 13.5022 13.9146L13.9146 13.5022C14.0285 13.3883 14.0285 13.2036 13.9146 13.0897ZM5.54169 9.9167C3.12917 9.9167 1.16668 7.95421 1.16668 5.54169C1.16668 3.12917 3.12917 1.16668 5.54169 1.16668C7.95421 1.16668 9.9167 3.12917 9.9167 5.54169C9.9167 7.95421 7.95421 9.9167 5.54169 9.9167Z' fill='%23C8BFCC'/%3E%3C/svg%3E%0A");
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    max-height: 260px;
+    overflow: auto;
+    padding: 1px;
+
+    > li {
+      min-height: 38px;
+      outline: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.04em;
+      color: rgba(0, 0, 0, 0.6);
+      height: 47px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: 0.2s;
+      padding: 0 10px;
+      cursor: pointer;
+
+      :global {
+        .ant-checkbox-wrapper {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+      }
+
+      .user-avatar-wrapper {
+        margin-right: 20px;
+
+        svg {
+          width: 12px;
+          height: 12px;
+        }
+      }
+
+      .colorIndicator {
+        flex: 0 0 10px;
+        background: #ccc;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        margin-right: 9px;
+      }
+
+      .userName {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: left;
+        cursor: default;
+        font-family: 'Red Hat Display';
+        color: #000000;
+        font-weight: 500;
+        font-size: 14px;
+        font-style: normal;
+      }
+
+      &:hover {
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 9px rgba(71, 71, 71, 0.1);
+      }
+
+      &.active {
+        .add-user {
+          background-color: @purple-color-bold;
+
+          svg {
+            visibility: visible;
+
+            path {
+              fill: #FFFFFF;
+            }
+          }
+        }
+      }
+    }
+
+    .edit-tag {
+      margin: 0 12px;
+      padding: 10px;
+      opacity: 0;
+      cursor: pointer;
+      display: flex;
+      transition: all ease 0.3s;
+      @media (max-width: 767px) {
+        opacity: 1;
+      }
+    }
+  }
+
+  .add-user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: 1px solid #d3d1d1;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+
+    svg {
+      fill: #FFFFFF;
+      visibility: hidden;
+    }
+
+    &:hover {
+      svg {
+        path {
+          fill: @purple-color-bold;
+        }
+      }
+    }
+  }
+
+  /* width */
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(63, 15, 63, 0.08);
+  }
+
+  /* Handle */
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(63, 15, 63, 0.08);
+    border-radius: 30px;
+  }
+
+  /* Handle on hover */
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(63, 15, 63, 0.08);
+  }
+
+  .user-item {
+    outline: none;
+  }
+
+  .whiteTagIcon {
+    svg {
+      width: 13px !important;
+      height: 13px !important;
+    }
+  }
+
+  .projectBlackIndicator {
+    color: #000 !important;
+    border: .5px solid #000;
+    background-color: #fff;
+  }
+
+  .modal-dropdown {
+    top: 50px;
+    left: unset;
+    right: 0;
+  }
+
+  .error-message-block {
+    width: 100%;
+    color: red;
+    height: 20px;
+    line-height: 25px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .all-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 19px;
+    padding-bottom: 20px;
+    width: 100%;
+
+    &.active {
+      .add-user {
+        background-color: @purple-color-bold;
+
+        svg {
+          visibility: visible;
+
+          path {
+            fill: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+
+  .all-select-label {
+    padding: 0 10px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #000000;
+  }
+
+  .users-sect {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+
+    .label {
+      width: 100%;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      color: @defaultColor;
+      cursor: default;
+      padding: 20px 14px;
+    }
+
+  }
+
+  .addTagBtn {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+    color: @secondary-color;
+  }
+
+  .dropdown-actions {
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: initial;
+    margin-top: 20px;
+
+    button {
+      max-height: 42px;
+      width: 140px;
+    }
+  }
+
+  :global {
+    .fade-enter {
+      opacity: 0;
+      transform: translate(45px, -60px) scale(0.6);
+    }
+
+    .fade-enter-active {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+      transition: opacity 200ms, transform 200ms;
+    }
+
+    .fade-exit {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+
+    .fade-exit-active {
+      opacity: 0;
+      transform: translate(45px, -60px) scale(0.6);
+      transition: opacity 200ms, transform 200ms;
+    }
+
+    .animateHeight-enter {
+      opacity: 0;
+      max-height: 0;
+    }
+
+    .animateHeight-enter-active {
+      opacity: 1;
+      max-height: 33px;
+      transition: opacity 200ms, max-height 200ms;
+    }
+
+    .animateHeight-exit {
+      opacity: 1;
+      max-height: 33px;
+    }
+
+    .animateHeight-exit-active {
+      opacity: 0;
+      max-height: 0;
+      transition: opacity 200ms, max-height 200ms;
+    }
+  }
+
+  :global {
+
+    .ant-checkbox-wrapper {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.03em;
+      color: #000000;
+    }
+
+    .ant-checkbox-inner {
+      border: 1px solid #D3D1D1;
+      box-sizing: border-box;
+      border-radius: 6px;
+      width: 19.18px;
+      height: 20px;
+    }
+
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background-color: #4A54FF;
+      border-color: #4A54FF;
+    }
+
+    .ant-checkbox + span {
+      padding-left: 0;
+    }
+  }
+}
